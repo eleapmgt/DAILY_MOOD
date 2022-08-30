@@ -11,7 +11,7 @@ class DiariesController < ApplicationController
   def update
     @diary = Diary.find(params[:id])
     @diary.update(diary_params)
-    redirect_to diary_path(@diary)
+    redirect_to diary_moods_path(@diary)
   end
 
   private
@@ -24,3 +24,5 @@ class DiariesController < ApplicationController
     params.require(:diary).permit(:gratitude, :date, :user_id)
   end
 end
+
+# diary_path(current_diary)
