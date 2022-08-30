@@ -17,8 +17,10 @@ class MoodsController < ApplicationController
   def update
   end
 
-
   def destroy
+    @mood = Mood.find(params[:diary_id])
+    @mood.destroy
+    redirect_to diary_mood path(@mood)
   end
 
   private
