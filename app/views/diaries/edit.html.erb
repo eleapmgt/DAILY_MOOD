@@ -1,0 +1,7 @@
+<h1>Mon journal de Gratitude</h1>
+
+<%= @diary.date %>
+<%= simple_form_for @diary do |f| %>
+  <%= f.input :gratitude, label: "Aujourd'hui, je suis reconnaissant·e pour :" %>
+  <%= f.submit %>
+<% end %>
