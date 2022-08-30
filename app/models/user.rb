@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :diaries
-  belongs_to :doctor, class_name: "User", foreign_key: :doctor_id
+  belongs_to :doctor, class_name: "User", foreign_key: :doctor_id, optional: true
 end
