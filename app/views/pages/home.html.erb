@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="">
+  <div class="header-homepage">
+    <div class="home-h1">
+      <h1 class="h1-daily">Daily</h1>
+      <h1 class="h1-mood">Mood</h1>
+    </div>
+    <div class="p-3 text-center">
+      <p>No matter how difficult and defeating life can sometimes feel, there is always something to feel grateful for.</p>
+    </div>
+  </div>
+
+  <div class="my-5 d-flex justify-content-center">
+    <%= link_to "START", "#", class: "home-button" %>
+  </div>
+    <% if user_signed_in? %>
+      <%= render "/shared/last_gratitudes" %>
+    <% end %>
+</div>
