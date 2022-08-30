@@ -25,4 +25,4 @@ class DiariesController < ApplicationController
   end
 end
 
-# diary_path(current_diary)
+# edit_diary_path(current_diary) --> chemin de home vers gratitude
