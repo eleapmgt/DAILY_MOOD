@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :diaries
+  has_many :diaries, dependent: :destroy
   belongs_to :doctor, class_name: "User", foreign_key: :doctor_id, optional: true
   after_create :create_diary
 
