@@ -9,5 +9,6 @@ class User < ApplicationRecord
 
   def create_diary
     Diary.create(user: self, date: Date.today)
+    Mood.create(diary: diaries.last, principal: true)
   end
 end

@@ -15,7 +15,11 @@ class MoodsController < ApplicationController
   end
 
   def update
+    @diary = Diary.find(params[:diary_id])
+    @mood = Mood.find(params[:id])
+    @mood.update(mood_params)
   end
+
 
   def destroy
     @mood = Mood.find(params[:diary_id])
