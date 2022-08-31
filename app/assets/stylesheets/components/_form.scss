@@ -9,8 +9,11 @@
 
 .gratitude-control:focus {
   color: white;
-  background-color: $green;
+  // background-color: $green;
   border-color: $green;
+  font-weight: thin;
+  font-style: italic;
+  background-image: repeating-linear-gradient($green 0px, $green 24px, white 25px);
 }
 
 .gratitude-control {
@@ -20,15 +23,19 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
+  // background-color: transparent;
   background-clip: padding-box;
   border: 1px solid $green;
   border-radius: 2px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  // height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, $green 25px);
 }
 
 .gratitude-control::placeholder {
-  color: rgba(0, 0, 0, 0.4)
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: thin;
+  font-style: italic;
 }
 
 .gratitude-control:focus::placeholder {
@@ -58,6 +65,19 @@
   margin-bottom: 1vh;
 }
 
-// .form-date {
-//   align-self: flex-start;
-// }
+.form-button {
+  border-radius: 50%;
+  padding: 0;
+  width: 55px;
+  height: 55px;
+  font-size: 18px;
+  border: 0;
+  background-color: $green;
+  color: white;
+  float: right;
+  margin-top: 7vh;
+}
+
+.form-date {
+  align-self: flex-start;
+}
