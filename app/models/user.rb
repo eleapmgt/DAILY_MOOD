@@ -8,6 +8,7 @@ class User < ApplicationRecord
   after_create :create_diary
 
   def create_diary
-    Diary.create(user: self, date: Date.today, gratitude: "Aujourd'hui, j'ai de la gratitude pour...")
+    Diary.create(user: self, date: Date.today)
+    # gratitude: "Aujourd'hui, j'ai de la gratitude pour..."
   end
 end
