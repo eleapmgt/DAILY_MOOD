@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   def create_diary
     Diary.create(user: self, date: Date.today)
+
+    Mood.create(diary: diaries.last, principal: true)
+
     # gratitude: "Aujourd'hui, j'ai de la gratitude pour..."
+
   end
 end
