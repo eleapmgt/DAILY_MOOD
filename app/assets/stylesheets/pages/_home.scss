@@ -1,1 +1,45 @@
 // Specific CSS for your home-page
+.header-homepage {
+  background-color: #9960D2;
+  opacity: 0.2;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  & h1 {
+    font-weight: 600;
+  }
+}
+
+.home-h1 {
+  padding: 10px 10px 5px 10px;
+}
+
+.h1-daily {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.h1-mood {
+  margin-left: 20px;
+}
+
+.svg-green {
+  filter: invert(73%) sepia(100%) saturate(339%) hue-rotate(115deg) brightness(82%) contrast(92%);
+}
+
+.schedular {
+  background-color:white;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(126,87,88,.1), 0 5px 5px rgba(0,0,0,.07);
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 90%;
+}
+
+.my-5 {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.height-31vh {
+  height: 31vh;
+}
