@@ -1,0 +1,31 @@
+<div class="container charts">
+
+<h1>Mon tableau de bord</h1>
+
+  <div class ="chart-daily">
+    <h2>Suivi journalier</h2>
+
+
+    </div>
+
+  <%# <h2>Graphique de l'humeur</h2>
+    <div class ="chart-mood">
+      <%= line_chart current_user.diaries.group_by_day(:date) %>
+    <%# </div> %>
+
+  <h2>Graphique de ..</h2>
+    <div class ="chart-one">
+      <%= line_chart User.group_by_day(:created_at).count %>
+    </div>
+
+  <h2>Graphique de ..</h2>
+    <div class ="chart-two">
+      <%= line_chart User.group_by_day(:created_at).count %>
+    </div>
+
+  <h2>Graphique de ..</h2>
+    <div class ="chart-three">
+
+
+    </div>
+</div>
