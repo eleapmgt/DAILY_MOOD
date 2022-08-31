@@ -7,7 +7,7 @@
             <div class="date-gratitude">
               <div class="p-1">
                 <div class="date-bullet">
-                  <p><strong><%= diary.date.strftime('%d/%m/%Y') %></strong></p>
+                  <p><strong><%= diary.date.strftime('%d/%m/%Y') if diary.date.present?%></strong></p>
                   <%= image_tag "bullet_point.svg", alt: "bullet", size: "35x35", class: "svg-green bullet-path" %>
                 </div>
                 <p class="gratitude-list"><%= diary.gratitude %></p>
