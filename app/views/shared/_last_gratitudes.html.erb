@@ -1,19 +1,24 @@
 <div class="d-flex justify-content-center height-31vh">
-  <div class="schedular d-flex p-4 justify-content-between">
-    <div class="">
+  <div class="schedular p-4 d-flex flex-column">
+    <div class="gratitudes">
       <% if current_user.diaries.present? %>
         <% current_user.diaries.order(date: :desc).limit(3).each do |diary| %>
           <div class="">
-            <p class="margin-bottom0px">
-              <%= image_tag "bullet_point.svg", alt: "bullet", size: "30x30", class: "svg-green" %>
-              <strong><%= diary.date %></strong></p>
-            <p><%= diary.gratitude %></p>
+            <div class="date-gratitude">
+              <div class="p-1">
+                <div class="date-bullet">
+                  <p><strong><%= diary.date.strftime('%d/%m/%Y') %></strong></p>
+                  <%= image_tag "bullet_point.svg", alt: "bullet", size: "35x35", class: "svg-green bullet-path" %>
+                </div>
+                <p class="gratitude-list"><%= diary.gratitude %></p>
+              </div>
+            </div>
           </div>
         <% end %>
       <% end %>
     </div>
 
-    <div class="plus-button d-flex align-items-end">
+    <div class="plus-button d-flex justify-content-end align-items-center">
       <%= link_to "#" do %>
         <%= image_tag "plus_button.svg", alt: "button", size: "60x60", class: "svg-green p-3" %>
       <% end %>
