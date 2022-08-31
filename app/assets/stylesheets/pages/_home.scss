@@ -43,3 +43,40 @@
 .height-31vh {
   height: 31vh;
 }
+
+.plus-button {
+  margin-bottom: -25px;
+  margin-right: -25px;
+  margin-top: -12px;
+}
+
+.gratitude-list {
+  margin-bottom: 1rem;
+}
+
+.gratitudes {
+  height: 90%;
+}
+
+.bullet-path{
+  position: absolute;
+  top: -5px;
+  left: -28px;
+}
+
+.bullet-point {
+  width: 100px;
+  height: 1px;
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
+
+.date-gratitude {
+  border-left: 3px solid #28ADA8;
+  padding-left: 5px;
+}
+
+.date-bullet {
+  position: relative;
+}
