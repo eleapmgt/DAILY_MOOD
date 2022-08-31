@@ -1,8 +1,8 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center height-31vh">
   <div class="schedular d-flex p-4 justify-content-between">
     <div class="">
       <% if current_user.diaries.present? %>
-        <% current_user.diaries.order(date: :desc).each do |diary| %>
+        <% current_user.diaries.order(date: :desc).limit(3).each do |diary| %>
           <div class="">
             <p class="margin-bottom0px">
               <%= image_tag "bullet_point.svg", alt: "bullet", size: "30x30", class: "svg-green" %>
