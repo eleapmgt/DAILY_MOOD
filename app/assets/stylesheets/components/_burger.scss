@@ -9,31 +9,16 @@
   user-select: none;
 }
 
-// #menuToggle a
-// {
-//   text-decoration: none;
-//   color: #232323;
-
-//   transition: color 0.3s ease;
-// }
-
-// #menuToggle a:hover
-// {
-//   color: tomato;
-// }
-
-
 #menuToggle input
 {
   display: block;
   width: 40px;
   height: 32px;
   position: absolute;
-  top: -7px;
-  left: -5px;
+  top: 23px;
+  left: 23px;
 
   cursor: pointer;
-
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
 
@@ -51,7 +36,7 @@
   margin-bottom: 5px;
   position: relative;
 
-  background: $purple;
+  background: white;
   border-radius: 3px;
 
   z-index: 1;
@@ -63,12 +48,18 @@
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
+.burger-span {
+  position: absolute;
+  margin-top: 28px;
+  margin-left: 28px;
+}
+
+#menuToggle .burger-span span:first-child
 {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
+#menuToggle .burger-span span:nth-last-child(2)
 {
   transform-origin: 0% 100%;
 }
@@ -79,10 +70,12 @@
 */
 #menuToggle input:checked ~ span
 {
+  position: absolute;
   opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(45deg) translate(-15px, -13px);
   background: white;
-  // margin-left: 5px;
+  margin-left: 35px;
+  margin-top: 50px;
 }
 
 /*
@@ -110,12 +103,12 @@
 {
   position: absolute;
   width: 50px;
-  margin: -100px 0 0 -35px;
+  margin: 0;
   padding-right: 60px;
-  padding-top: 125px;
+  padding-top: 80px;
   padding-bottom: 30px;
 
-  background: $purple;
+  background: $green;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
