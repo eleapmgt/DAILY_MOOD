@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :diaries, only: [:edit, :update, :index] do
     resources :moods, only: [:index, :update, :create, :destroy]
+    resources :contents, only: :update
     resources :diaries_rewards, only: :show
   end
   resources :users, only: [:index, :show]

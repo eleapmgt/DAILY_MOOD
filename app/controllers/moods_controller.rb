@@ -11,7 +11,7 @@ class MoodsController < ApplicationController
     @mood = Mood.new(mood_params)
     @mood.diary = @diary
     @mood = Mood.save
-    redirect_to diary_moods path(@mood)
+    redirect_to diary_diaries_reward_path(@diary, @diary.diary_reward.first)
   end
 
   def update
@@ -20,6 +20,12 @@ class MoodsController < ApplicationController
     @mood.update(mood_params)
   end
 
+  def update_text
+    @diary = Diary.find(params[:diary_id])
+    @mood = Mood.find(params[:id])
+    @mood.update(mood_params)
+    redirect_to diary_diaries_reward_path(@diary, @diary.diary_reward.last)
+  end
 
   def destroy
     @mood = Mood.find(params[:diary_id])

@@ -3,7 +3,7 @@
 $track-w: 20em;
 $track-h: .25em;
 $thumb-d: 1.5em;
-$track-c: #ccc;
+$track-c: rgb(223, 214, 214); //#ccc
 $dist: $track-w - $thumb-d;
 
 h1{
@@ -34,7 +34,7 @@ h2{
 	border: none;
 	width: $thumb-d; height: $thumb-d;
 	border-radius: 50%;
-	background: #f90;
+	background:  #8AC6A9;
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -45,9 +45,9 @@ h2{
   flex-wrap: wrap;
 	align-items: center;
 	position: relative;
-  width: 100%;
+  width: 90%;
   flex: 1 1 100%;
-  margin: 19px;
+  margin: 15px;
   padding: 0;
 
   input[type="range"] {
