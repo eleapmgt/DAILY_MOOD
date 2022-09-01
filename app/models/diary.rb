@@ -8,6 +8,10 @@ class Diary < ApplicationRecord
     moods.where(principal: true).first if moods.present?
   end
 
+  def mood_not_principal
+    moods.where(principal: true).first if moods.present?
+  end
+
   has_many :diary_rewards, dependent: :destroy
   has_many :moods, dependent: :destroy
 
