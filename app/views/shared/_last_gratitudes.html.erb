@@ -2,7 +2,7 @@
   <div class="schedular p-4 d-flex flex-column">
     <div class="gratitudes">
       <% if current_user.diaries.present? %>
-        <% current_user.diaries.order(date: :desc).limit(3).each do |diary| %>
+        <% current_user.diaries.order(date: :desc).last(3).each do |diary| %>
           <div class="">
             <div class="date-gratitude">
               <div class="p-1">
@@ -10,7 +10,7 @@
                   <p><strong><%= diary.date.strftime('%d/%m/%Y') if diary.date.present?%></strong></p>
                   <%= image_tag "bullet_point.svg", alt: "bullet", size: "35x35", class: "svg-green bullet-path" %>
                 </div>
-                <p class="gratitude-list"><%= diary.gratitude %></p>
+                <p class="gratitude-list"><%= diary.gratitude.truncate(35) %></p>
               </div>
             </div>
           </div>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="plus-button d-flex justify-content-end align-items-center">
-      <%= link_to "#" do %>
+      <%= link_to diaries_path do %>
         <%= image_tag "plus_button.svg", alt: "button", size: "60x60", class: "svg-green p-3" %>
       <% end %>
     </div>
