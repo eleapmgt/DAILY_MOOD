@@ -2,6 +2,7 @@ class DiariesController < ApplicationController
   before_action :set_diary, only: %i[edit update]
 
   def index
+    @diaries = Diary.all
   end
 
   def edit
