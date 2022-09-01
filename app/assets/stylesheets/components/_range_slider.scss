@@ -1,10 +1,23 @@
-body { margin: 2rem }
+// body { margin: 2rem }
 
 $track-w: 20em;
 $track-h: .25em;
 $thumb-d: 1.5em;
-$track-c: #ccc;
+$track-c: rgb(223, 214, 214); //#ccc
 $dist: $track-w - $thumb-d;
+
+h1{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h2{
+  align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 
 @mixin track() {
 	box-sizing: border-box;
@@ -21,7 +34,7 @@ $dist: $track-w - $thumb-d;
 	border: none;
 	width: $thumb-d; height: $thumb-d;
 	border-radius: 50%;
-	background: #f90;
+	background:  #8AC6A9;
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -32,7 +45,10 @@ $dist: $track-w - $thumb-d;
   flex-wrap: wrap;
 	align-items: center;
 	position: relative;
-  width: 100%;
+  width: 90%;
+  flex: 1 1 100%;
+  margin: 15px;
+  padding: 0;
 
   input[type="range"] {
     &, &::-webkit-slider-thumb { -webkit-appearance: none }
@@ -59,6 +75,23 @@ $dist: $track-w - $thumb-d;
     &:last-of-type::-moz-range-track { background: darkred; display: none; background: none transparent; }
   }
 }
+
+.small_range_slider{
+  width: 70%;
+}
+
+.all_moods {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+
+}
+#mood-2 {
+  margin-left: 70px;
+}
+
 
 .range-slider.-multiple {
   position: relative;
