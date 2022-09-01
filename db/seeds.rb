@@ -21,10 +21,7 @@ sherazade = User.create!(email: "sheshe@hotmail.com", password: "secret", userna
 
 all_users = [elea, alexis, oceane, sherazade]
 
-
 puts "#{User.count} users created!"
-
-
 
 # For Rewards
 
