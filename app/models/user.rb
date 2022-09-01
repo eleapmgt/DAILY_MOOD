@@ -16,7 +16,7 @@ class User < ApplicationRecord
       diaries.each do |diary|
         rewards_used << diary.diary_rewards.last.reward.id
       end
-      rewards = Reward.where.not(rewards_used)
+      rewards = Reward.where.not(id: rewards_used)
       DiaryReward.create(diary: diaries.last, reward: rewards.rand)
     else
       DiaryReward.create(diary: diaries.last, reward: Reward.all.rand)
