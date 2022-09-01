@@ -1,19 +1,19 @@
 // Form Input
 
 .gratitude-control.is-valid {
-  border-color: $green;
+  border-color: $purple;
   padding-right: calc(1.5em + 0.75rem);
   background-color: transparent;
   background-image: none;
 }
 
 .gratitude-control:focus {
-  color: white;
-  // background-color: $green;
-  border-color: $green;
+  color: black;
+  border-color: $purple;
   font-weight: thin;
   font-style: italic;
-  background-image: repeating-linear-gradient($green 0px, $green 24px, white 25px);
+  background-image: repeating-linear-gradient($purple 0px, $purple 24px, white 25px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .gratitude-control {
@@ -25,21 +25,22 @@
   line-height: 1.5;
   // background-color: transparent;
   background-clip: padding-box;
-  border: 1px solid $green;
+  border: 1px solid $purple;
   border-radius: 2px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   // height: 100%;
-  background-image: repeating-linear-gradient(white 0px, white 24px, $green 25px);
+  background-image: repeating-linear-gradient(rgb(250, 250, 250) 0px, rgb(250, 250, 250) 24px, $purple 25px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .gratitude-control::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.3);
   font-weight: thin;
   font-style: italic;
 }
 
 .gratitude-control:focus::placeholder {
-  color: rgba(255, 255, 255, 0.6)
+  color:  rgba(0, 0, 0, 0.2);
 }
 
 // Entire Form
