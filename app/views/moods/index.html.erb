@@ -11,8 +11,12 @@
         max="5"
         step="1">
   <output class="range-slider__value"
-          data-range-slider-target="value">0
+          data-range-slider-target="value">
   </output>
+  <div class="d-flex justify-content-between w-100">
+  <div>-5</div>
+  <div>5</div>
+  </div>
   <%= simple_form_for [@diary, @diary.mood_principal], method: :patch, data: { 'range-slider-target' => 'form'}  do |f| %>
     <%= f.input :rating, as: :hidden, input_html: { data: { 'range-slider-target' => 'input' } }%>
   <% end %>
@@ -45,11 +49,12 @@
 <br>
 <div class="all_moods">
   <% i = 0 %>
-  <% @diary.moods.not_principal.each do |mood| %>
+  <% moodtypes = ["Sport", "Social", "Sommeil"] %>
+  <% @diary.moods.not_principal.each_with_index do |mood, index| %>
     <div class="small_range_slider" id="mood-<%=i + 1%>">
       <h3><%= mood.title %></h3>
       <div class="range-slider" data-controller="range-slider" data-range-slider-mood-value="<%= diary_mood_path(@diary, mood) %>">
-        <label for="customRange"></label>
+        <label for="customRange"><%= moodtypes[index] %></label>
         <input type="range"
               name="moodScore"
               class="range-slider__range"
@@ -60,8 +65,12 @@
               max="5"
               step="1">
         <output class="range-slider__value"
-                data-range-slider-target="value">0
+                data-range-slider-target="value">
                 </output>
+        <div class="d-flex justify-content-between w-100">
+        <div>-5</div>
+        <div>5</div>
+        </div>
         <%= simple_form_for [@diary, mood], method: :patch, data: { 'range-slider-target' => 'form'}  do |f| %>
           <%= f.input :rating, as: :hidden, input_html: { data: { 'range-slider-target' => 'input' } }%>
           <% i += 1 %>
