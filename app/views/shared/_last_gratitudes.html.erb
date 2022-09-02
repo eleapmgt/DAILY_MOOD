@@ -10,7 +10,7 @@
                   <p><strong><%= diary.date.strftime('%d/%m/%Y') if diary.date.present?%></strong></p>
                   <%= image_tag "bullet_point.svg", alt: "bullet", size: "35x35", class: "svg-green bullet-path" %>
                 </div>
-                <p class="gratitude-list"><%= diary.gratitude.truncate(35) %></p>
+                <p class="gratitude-list"><%= diary.gratitude&.truncate(35) %></p>
               </div>
             </div>
           </div>
