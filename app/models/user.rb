@@ -15,6 +15,7 @@ class User < ApplicationRecord
     Mood.create(diary: diaries.last, principal: true, position: 1)
     Mood.create(diary: diaries.last, principal: true, position: 1)
     Mood.create(diary: diaries.last, principal: true)
+    # système pour ne pas réavoir deux fois la même reward
     if diaries.present?
       rewards_used = []
       diaries.each do |diary|
