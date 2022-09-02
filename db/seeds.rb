@@ -8,21 +8,6 @@
 Reward.destroy_all
 User.destroy_all
 
-# For Users Creation
-
-puts "Destroying users..."
-puts "Creating users..."
-
-
-elea = User.create!(email: "uwu@hotmail.com", password: "secret", username: "Uwu")
-oceane = User.create!(email: "sese@hotmail.com", password: "secret", username: "Sese")
-alexis = User.create!(email: "alpaga@hotmail.com", password: "secret", username: "Alpaga")
-sherazade = User.create!(email: "sheshe@hotmail.com", password: "secret", username: "Sheshe")
-
-all_users = [elea, alexis, oceane, sherazade]
-
-puts "#{User.count} users created!"
-
 # For Rewards
 
 puts "Destroying rewards..."
@@ -46,3 +31,18 @@ Reward.create(category: "video", content_url: url)
 
 
 puts "#{Reward.count} rewards created!"
+
+# For Users Creation
+
+puts "Destroying users..."
+puts "Creating users..."
+
+
+elea = User.create!(email: "uwu@hotmail.com", password: "secret", username: "Uwu")
+oceane = User.create!(email: "sese@hotmail.com", password: "secret", username: "Sese")
+alexis = User.create!(email: "alpaga@hotmail.com", password: "secret", username: "Alpaga")
+sherazade = User.create!(email: "sheshe@hotmail.com", password: "secret", username: "Sheshe")
+
+all_users = [elea, alexis, oceane, sherazade]
+
+puts "#{User.count} users created!"
