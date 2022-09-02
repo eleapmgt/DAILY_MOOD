@@ -11,10 +11,11 @@ class User < ApplicationRecord
   def create_diary
     Diary.create(user: self, date: Date.today)
 
+    Mood.create(diary: diaries.last, principal: true, position: 1)
+    Mood.create(diary: diaries.last, principal: false, position: 2)
+    Mood.create(diary: diaries.last, principal: false, position: 3)
+    Mood.create(diary: diaries.last, principal: false, position: 4)
 
-    Mood.create(diary: diaries.last, principal: true, position: 1)
-    Mood.create(diary: diaries.last, principal: true, position: 1)
-    Mood.create(diary: diaries.last, principal: true)
     # système pour ne pas réavoir deux fois la même reward
     if diaries.present?
       rewards_used = []
