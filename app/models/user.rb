@@ -18,12 +18,12 @@ class User < ApplicationRecord
     if diaries.present?
       rewards_used = []
       diaries.each do |diary|
-        rewards_used << diary.diary_rewards.last.reward.id
+        rewards_used << diary.diary_rewards.last.reward.id unless diary.diary_rewards.empty?
       end
       rewards = Reward.where.not(id: rewards_used)
-      DiaryReward.create(diary: diaries.last, reward: rewards.rand)
+      DiaryReward.create(diary: diaries.last, reward: rewards.sample)
     else
-      DiaryReward.create(diary: diaries.last, reward: Reward.all.rand)
+      DiaryReward.create(diary: diaries.last, reward: Reward.all.sample)
     end
 
     # gratitude: "Aujourd'hui, j'ai de la gratitude pour..."
