@@ -10,9 +10,11 @@
   </div>
 
   <div class="my-5 d-flex justify-content-center">
-    <%= link_to "DAILY", "#", class: "home-button" %>
-  </div>
     <% if user_signed_in? %>
+      <%= link_to "DAILY", edit_diary_path(current_diary), class: "home-button" %>
+  </div>
       <%= render "/shared/last_gratitudes" %>
+    <% else %>
+      <%= link_to "DAILY", new_user_session_path, class: "home-button" %>
     <% end %>
 </div>
