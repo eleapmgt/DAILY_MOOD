@@ -1,5 +1,5 @@
 <h1 class="text-center">Evalue ton humeur de la journée</h1>
-<div class="range-slider" data-controller="range-slider" data-range-slider-mood-value="<%= diary_mood_path(@diary,@diary.mood_principal) %>">
+<div class="range-slider" data-controller="range-slider" data-range-slider-mood-value="<%= diary_moods_path(@diary) %>">
   <label for="customRange"></label>
   <input type="range"
         name="moodScore"
