@@ -6,19 +6,6 @@ $thumb-d: 1.5em;
 $track-c: rgb(223, 214, 214); //#ccc
 $dist: $track-w - $thumb-d;
 
-h1{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-h2{
-  align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-
 @mixin track() {
 	box-sizing: border-box;
 	border: none;

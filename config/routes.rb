@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+
+  get 'calendar', to: 'diaries#calendar'
+
   resources :diaries, only: [:edit, :update, :index] do
     resources :moods, only: [:index, :update, :create, :destroy]
     resources :contents, only: :update

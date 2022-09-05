@@ -1,3 +1,4 @@
+
 <div data-controller="wheel" data-wheel-image-value="<%= image_url('wheeltwo.png') %>">
   <h1>Tourne la roue de la positivité</h1>
   <br>
@@ -9,4 +10,16 @@
 
 <div class= "end-btn-container">
   <%= link_to "Terminé", "/", class: "end-button" %>
+<div data-controller="wheel">
+  <div class="entire-form">
+    <h1 class="reward-title">Tourne la roue de la positivité</h1>
+
+    <div id="count">0</div>
+
+     <button class="btn" data-action= "click -> wheel#roll"> <canvas id="canvas" data-wheel-target="canvas"></canvas></button>
+
+    <div class= "end-btn-container">
+      <%= link_to "Terminé", "/", class: "end-button" %>
+    </div>
+  </div>
 </div>
