@@ -1,0 +1,14 @@
+<%= month_calendar(attribute: :date, events: @diaries, partial: "simple_calendar/calendar") do |date, diaries| %>
+  <%= link_to calendar_path(date: date), class:"text-reset" do %>
+    <%= date.day %>
+  <% end %>
+  <% diaries.each do |diary| %>
+    <div>
+      <%= diary.id %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @diary %>
+  <%= @diary.id %>
+<% end %>
