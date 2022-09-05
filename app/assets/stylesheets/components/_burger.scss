@@ -36,7 +36,7 @@
   margin-bottom: 5px;
   position: relative;
 
-  background: white;
+  background: $green;
   border-radius: 3px;
 
   z-index: 1;
@@ -73,7 +73,7 @@
   position: absolute;
   opacity: 1;
   transform: rotate(45deg) translate(-15px, -13px);
-  background: white;
+  background: $green;
   margin-left: 35px;
   margin-top: 50px;
 }
@@ -107,8 +107,10 @@
   padding-right: 60px;
   padding-top: 80px;
   padding-bottom: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 
-  background: $green;
+  background: $white;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -123,7 +125,7 @@
 {
   padding: 15px 0;
   font-size: 12px;
-  color: white;
+  color: $green;
 }
 
 /*
