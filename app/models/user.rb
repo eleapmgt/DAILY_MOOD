@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :diaries, dependent: :destroy
   has_many :moods, through: :diaries
+  has_many :user_categories, dependent: :destroy
+  has_many :categories, through: :user_categories
   belongs_to :doctor, class_name: "User", foreign_key: :doctor_id, optional: true
   after_create :create_diary
 

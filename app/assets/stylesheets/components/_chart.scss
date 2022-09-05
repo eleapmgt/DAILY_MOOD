@@ -1,7 +1,4 @@
-.charts h1{
-  text-align: center;
-  padding: 5px;
-}
+
 
 .chart-daily {
   overflow: hidden;
@@ -21,7 +18,7 @@
   margin-bottom: 20px;
 }
 
-.chart-one {
+.chart {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -30,14 +27,6 @@
   margin-bottom: 20px;
 }
 
-.chart-two {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  height: 200px;
-  margin-bottom: 20px;
-}
 
 .charts h2{
  font-size: 20px;
