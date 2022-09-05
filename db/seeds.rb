@@ -74,18 +74,15 @@ puts "#{User.count} users created!"
 all_users.each do |user|
   # creer un user catégorie pour l'humeur generale avec position 1
   categories = [principal_category] + secondary_categories.sample(3)
+  # pour chaque user on prend 3 catégorie aleatoire  et créer un user_categorie + position 2, 3 et 4
   categories.each_with_index do |cat, i|
     UserCategory.create!(user: user, category: cat, position: i + 1)
   end
-  # pour chaque user on prend 3 catégorie aleatoire  et créer un user_categorie + position 2, 3 et 4
-
-
 end
 
 
 start_date = 1.week.ago.to_date
 end_date = Date.today
-
 (start_date..end_date).each do |day|
   # pour chaque jours je créer un daily a la date
   d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade, date: day)
@@ -93,6 +90,7 @@ end_date = Date.today
     Mood.create!(diary: d, principal: cat == principal_category, rating: rand(-5..5), category: cat)
   puts day
   end
+  DiaryReward.create!(diary: d, reward: Reward.all.sample)
 end
 
 puts "#{Mood.count} moods created!"
