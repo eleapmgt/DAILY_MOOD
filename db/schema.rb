@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_145528) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_110331) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "diaries", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -38,10 +44,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_145528) do
     t.string "title"
     t.integer "rating"
     t.boolean "principal"
-    t.integer "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
+    t.string "cg"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_moods_on_category_id"
     t.index ["diary_id"], name: "index_moods_on_diary_id"
   end
 
@@ -50,6 +58,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_145528) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
+  end
+
+  create_table "user_categories", force: :cascade do |t|
+    t.integer "position"
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_user_categories_on_category_id"
+    t.index ["user_id"], name: "index_user_categories_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,6 +90,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_145528) do
   add_foreign_key "diaries", "users"
   add_foreign_key "diary_rewards", "diaries"
   add_foreign_key "diary_rewards", "rewards"
+  add_foreign_key "moods", "categories"
   add_foreign_key "moods", "diaries"
+  add_foreign_key "user_categories", "categories"
+  add_foreign_key "user_categories", "users"
   add_foreign_key "users", "users", column: "doctor_id"
 end
