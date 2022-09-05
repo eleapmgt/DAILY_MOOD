@@ -14,12 +14,10 @@ Category.destroy_all
 # puts "Destroying rewards..."
 # puts "Creating rewards..."
 
-
 puts "Destroying categories..."
 puts "Creating categories..."
 
 principal_category = Category.create!(title: "humeur generale")
-
 
 sport = Category.create!(title: "sport")
 travail = Category.create!(title: "Travail")
@@ -34,12 +32,12 @@ gestion_du_stress = Category.create!(title: "gestion du stress")
 
 secondary_categories = [sport, travail, famille, social, sommeil, gestion_du_stress]
 
-
 puts "#{Category.count} categories created!"
 
+puts "Destroying rewards..."
+puts "Creating rewards..."
 
 categories = ["music", "article", "citation", "poem", "video", "graphic art", "film"]
-
 
  url = "https://www.youtube.com/watch?v=4cNJAWY8MKQ&list=OLAK5uy_ljHjl6SDNCIw8cOZMrutKpROHKpC0qsbM&index=2"
  Reward.create(category: "musique", content_url: "https://www.youtube.com/watch?v=4cNJAWY8MKQ&list=OLAK5uy_ljHjl6SDNCIw8cOZMrutKpROHKpC0qsbM&index=2")
@@ -61,7 +59,6 @@ puts "#{Reward.count} rewards created!"
 puts "Destroying users..."
 puts "Creating users..."
 
-
 elea = User.create!(email: "uwu@hotmail.com", password: "secret", username: "Uwu")
 oceane = User.create!(email: "sese@hotmail.com", password: "secret", username: "Sese")
 alexis = User.create!(email: "alpaga@hotmail.com", password: "secret", username: "Alpaga")
@@ -70,6 +67,9 @@ sherazade = User.create!(email: "sheshe@hotmail.com", password: "secret", userna
 all_users = [elea, alexis, oceane, sherazade]
 
 puts "#{User.count} users created!"
+
+puts "Destroying moods..."
+puts "Creating moods..."
 
 all_users.each do |user|
   # creer un user catégorie pour l'humeur generale avec position 1
@@ -80,13 +80,11 @@ all_users.each do |user|
   end
 end
 
-
 start_date = 1.week.ago.to_date
-end_date = Date.today
+end_date = Date.today - 1.day
 (start_date..end_date).each do |day|
   # pour chaque jours je créer un daily a la date
   d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade, date: day)
-  return if d = date.today
   d.user.categories.each do |cat|
     Mood.create!(diary: d, principal: cat == principal_category, rating: rand(-5..5), category: cat)
   end
