@@ -1,19 +1,30 @@
 .form-title {
-  background-image: url('tache1.png');
-  background-size: 100% 100%;
+  background-image: image-url('tache1.png');
+  background-size: 100% calc(2.875rem + 1.5vw);
   background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .mood-title {
-  background-image: url('tache3.png');
-  background-size: 90% 100%;
+  background-image: image-url('tache3.png');
+  background-size: 90% calc(2.875rem + 1.5vw);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
 }
 
 .reward-title {
-  background-image: url('tache2.png');
-  background-size: 80% 100%;
+  background-image: image-url('tache2.png');
+  background-size: 80% calc(2.875rem + 1.5vw);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
+}
+
+.dashboard-title {
+  background-image: image-url('tache3.png');
+  background-size: 55% calc(2.875rem + 1.5vw);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  // background-size: 55% 100%;
+  // background-repeat: no-repeat;
+  // background-position: center;
 }
