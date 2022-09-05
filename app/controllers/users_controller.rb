@@ -8,4 +8,7 @@ class UsersController < ApplicationController
    @user = User.find(params[:id])
   end
 
+  def edit
+    @categories = Category.all.where.not(title: "humeur generale")
+  end
 end

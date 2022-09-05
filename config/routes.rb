@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :contents, only: :update
     resources :diaries_rewards, only: :show
   end
-  resources :users, only: [:index, :show]
+  resources :users, only: [:show, :edit]
+  resources :user_categories, only: [:create, :destroy]
 end
