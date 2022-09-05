@@ -1,18 +1,23 @@
 <div class="d-flex flex-column min-hv-90">
   <div class="header-homepage">
-      <div class="home-h1">
-        <h1 class="h1-daily">Daily</h1>
-        <h1 class="h1-mood">Mood</h1>
-      </div>
+      <%# <div class="home-h1"> %>
+        <%# <h1 class="h1-daily">Daily</h1>
+        <h1 class="h1-mood">Mood</h1> %>
+      <%# </div> %>
+    <div class="logo-home">
+      <%= image_tag('logo.png', alt: "logo Daily Mood", class: "logo-daily-mood") %>
+    </div>
     <div class="p-3 text-center">
       <p>Apprends à valoriser tes pensées positives</p>
     </div>
   </div>
 
   <div class="my-5 d-flex justify-content-center">
-    <%= link_to "DAILY", "#", class: "home-button" %>
-  </div>
     <% if user_signed_in? %>
+      <%= link_to "DAILY", edit_diary_path(current_diary), class: "home-button" %>
+  </div>
       <%= render "/shared/last_gratitudes" %>
+    <% else %>
+      <%= link_to "DAILY", new_user_session_path, class: "home-button" %>
     <% end %>
 </div>
