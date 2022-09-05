@@ -2,11 +2,13 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["canvas"]
+  static values = {image: String}
   connect() {
+    console.log(this)
     this.ctx = this.canvasTarget.getContext('2d');
     this.img = new Image();
     //  this.img.onload = this.roll.bind(this);
-    this.img.src = 'https://assets.piliapp.com/s3lnk/random/wheel/screenshot.png';
+    this.img.src = this.imageValue;
     this.img.onload = this.drawImg.bind(this)
     console.log(this.ctx);
     console.log(this.img);
@@ -37,4 +39,4 @@ export default class extends Controller {
   }
 
 
-}
+ }
