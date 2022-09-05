@@ -3,28 +3,26 @@
   <div class="entire form">
     <h1 class="dashboard-title">Mon tableau de bord</h1>
 
-    <div class ="chart-daily">
-      <h2>Suivi journalier</h2>
-    </div>
 
-    <h2>Graphique de l'humeur</h2>
+  <% charts_colors = ["#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82", "#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82" ]%>
+
+   <% @user_categories.each_with_index do |cat, i| %>
+    <h2><%= cat.title %></h2>
+      <p><%= charts_colors[i] %></p>
+    <% color = charts_colors[i] %>
     <div class ="chart-mood" >
-      <%= area_chart current_user.data_moods_rating, width: "100%", height: "200px", min: -5, max: 5 , colors: ["#8AC6A9", "#666"] %>
+      <%= area_chart current_user.moods.where(category: cat).map {|mood| ["#{mood.diary.date}", mood.rating]}.to_h, width: "100%", height: "200px", min: -5, max: 5, colors: [color,"#666"] %>
     </div>
+    <% end %>
 
- <h2>Graphique de <%=  %></h2>
-    <div class ="chart">
-      <%= area_chart current_user.data_moods_position_2, width: "100%", height: "200px", min: -5, max: 5 , colors: ["#FFEB82", "#666"]%>
+    <% @other_categories.each_with_index do |cat, i| %>
+    <h2><%= cat.title %></h2>
+    <p><%= charts_colors[i] %></p>
+    <% color = charts_colors[i] %>
+    <div class ="chart" >
+      <%= area_chart current_user.moods.where(category: cat).map {|mood| ["#{mood.diary.date}", mood.rating]}.to_h, width: "100%", height: "200px", min: -5, max: 5 , colors: [color,"#666"] %>
     </div>
+    <% end %>
 
-  <h2>Graphique de </h2>
-    <div class ="chart">
-      <%= area_chart current_user.data_moods_position_3, width: "100%", height: "200px", min: -5, max: 5 , colors: ["#EEE1FF", "#666"] %>
-    </div
-
-  <h2>Graphique de </h2>
-    <div class ="chart">
-      <%= area_chart current_user.data_moods_position_4, width: "100%", height: "200px", min: -5, max: 5 , colors: ["#8AC6A9", "#666"] %>
-    </div>
   </div>
 </div>
