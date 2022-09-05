@@ -29,7 +29,6 @@ class User < ApplicationRecord
     end
 
     # gratitude: "Aujourd'hui, j'ai de la gratitude pour..."
-
   end
 
   def data_moods_rating
