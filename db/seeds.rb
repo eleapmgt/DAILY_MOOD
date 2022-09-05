@@ -7,11 +7,35 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Reward.destroy_all
 User.destroy_all
+Category.destroy_all
 
 # For Rewards
 
 # puts "Destroying rewards..."
 # puts "Creating rewards..."
+
+
+puts "Destroying categories..."
+puts "Creating categories..."
+
+principal_category = Category.create!(title: "humeur generale")
+
+
+sport = Category.create!(title: "sport")
+travail = Category.create!(title: "Travail")
+famille = Category.create!(title: "Famille")
+social = Category.create!(title: "social")
+sommeil = Category.create!(title: "sommeil")
+loisirs = Category.create!(title: "loisirs")
+alimentation = Category.create!(title: "alimentation")
+culture = Category.create!(title: "culture")
+motivation = Category.create!(title: "motivation")
+gestion_du_stress = Category.create!(title: "gestion du stress")
+
+secondary_categories = [sport, travail, famille, social, sommeil, gestion_du_stress]
+
+
+puts "#{Category.count} categories created!"
 
 
 categories = ["music", "article", "citation", "poem", "video", "graphic art", "film"]
@@ -38,7 +62,7 @@ puts "Destroying users..."
 puts "Creating users..."
 
 
-elea = User.create!(email: "uwu@hotmail.com", password: "secret", username: "Uwu")
+elea = User.create!(email: "uwu@hotmail.com", password: "secret", username: "Uwu", )
 oceane = User.create!(email: "sese@hotmail.com", password: "secret", username: "Sese")
 alexis = User.create!(email: "alpaga@hotmail.com", password: "secret", username: "Alpaga")
 sherazade = User.create!(email: "sheshe@hotmail.com", password: "secret", username: "Sheshe")
@@ -47,17 +71,26 @@ all_users = [elea, alexis, oceane, sherazade]
 
 puts "#{User.count} users created!"
 
+all_users.each do |user|
+  # creer un user catégorie pour l'humeur generale avec position 1
+  categories = [principal_category] + secondary_categories.sample(3)
+  # pour chaque user on prend 3 catégorie aleatoire  et créer un user_categorie + position 2, 3 et 4
+  categories.each_with_index do |cat, i|
+    UserCategory.create!(user: user, category: cat, position: i + 1)
+  end
+end
 
 
 start_date = 1.week.ago.to_date
 end_date = Date.today
-
 (start_date..end_date).each do |day|
   # pour chaque jours je créer un daily a la date
-  d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade)
-  Mood.create(diary: d, principal: true, rating: rand(-5..5), position: 1)
-  Mood.create(diary: d, principal: false, rating: rand(-5..5), title: "Sport", position: 2)
-  Mood.create(diary: d, principal: false, rating: rand(-5..5), title: "Travail", position: 3)
-  Mood.create(diary: d, principal: false, rating: rand(-5..5), title: "Famille", position: 4)
+  d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade, date: day)
+  d.user.categories.each do |cat|
+    Mood.create!(diary: d, principal: cat == principal_category, rating: rand(-5..5), category: cat)
   puts day
+  end
+  DiaryReward.create!(diary: d, reward: Reward.all.sample)
 end
+
+puts "#{Mood.count} moods created!"
