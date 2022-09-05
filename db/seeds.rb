@@ -62,7 +62,7 @@ puts "Destroying users..."
 puts "Creating users..."
 
 
-elea = User.create!(email: "uwu@hotmail.com", password: "secret", username: "Uwu", )
+elea = User.create!(email: "uwu@hotmail.com", password: "secret", username: "Uwu")
 oceane = User.create!(email: "sese@hotmail.com", password: "secret", username: "Sese")
 alexis = User.create!(email: "alpaga@hotmail.com", password: "secret", username: "Alpaga")
 sherazade = User.create!(email: "sheshe@hotmail.com", password: "secret", username: "Sheshe")
@@ -86,9 +86,9 @@ end_date = Date.today
 (start_date..end_date).each do |day|
   # pour chaque jours je créer un daily a la date
   d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade, date: day)
+  return if d = date.today
   d.user.categories.each do |cat|
     Mood.create!(diary: d, principal: cat == principal_category, rating: rand(-5..5), category: cat)
-  puts day
   end
   DiaryReward.create!(diary: d, reward: Reward.all.sample)
 end

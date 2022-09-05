@@ -3,6 +3,8 @@ class DiariesController < ApplicationController
 
   def index
     @diaries = Diary.all
+    @user_categories = current_user.categories
+    @other_categories = Category.excluding(@user_categories)
   end
 
   def edit
