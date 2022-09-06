@@ -3,15 +3,17 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: 600px;
+  height: 630px;
   margin: 24px;
 }
 
 .categories {
   background-color: $aliceblue;
   padding: 12px;
+  border: 1px solid $green;
   border-radius: 5px;
   width: 80%;
+  align-items: center;
 }
 
 .categories a {
@@ -19,21 +21,19 @@
   color: black;
   border-radius: 8px;
   padding: 6px;
+  margin: 12px 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  margin: 12px;
-  width: 75%;
 }
 
 .chosen-categories {
-  height: 30%;
-  align-items: center;
+  height: 35%;
 }
 
 .other-categories {
-  height: 60%;
+  height: 55%;
 }
 .chosen-categories a {
-  background-color: $yellow;
+  background-color: $green;
   display: flex;
   justify-content: center;
 }
@@ -42,4 +42,8 @@
   background-color: $blue;
   display: flex;
   justify-content: center;
+}
+
+.categories-edit-title {
+  text-align: center;
 }
