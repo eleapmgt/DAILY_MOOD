@@ -1,25 +1,27 @@
-<h1 class="text-center">Evalue ton humeur de la journée</h1>
-<div class="range-slider" data-controller="range-slider" data-range-slider-mood-value="<%= diary_moods_path(@diary) %>">
-  <label for="customRange"></label>
-  <input type="range"
-        name="moodScore"
-        class="range-slider__range"
-        data-range-slider-target="range"
-        data-action="input->range-slider#updateValue"
-        value="0"
-        min="-5"
-        max="5"
-        step="1">
-  <output class="range-slider__value"
-          data-range-slider-target="value">
-  </output>
-  <div class="d-flex justify-content-between w-100">
-  <div>-5</div>
-  <div>5</div>
+<div class="entire-form">
+  <h1 class="text-center mood-title">Evalue ton humeur de la journée</h1>
+  <div class="range-slider" data-controller="range-slider" data-range-slider-mood-value="<%= diary_moods_path(@diary) %>">
+    <label for="customRange"></label>
+    <input type="range"
+          name="moodScore"
+          class="range-slider__range"
+          data-range-slider-target="range"
+          data-action="input->range-slider#updateValue"
+          value="0"
+          min="-5"
+          max="5"
+          step="1">
+    <output class="range-slider__value"
+            data-range-slider-target="value">
+    </output>
+    <div class="d-flex justify-content-between w-100">
+    <div>-5</div>
+    <div>5</div>
+    </div>
+    <%= simple_form_for [@diary, @diary.mood_principal], method: :patch, data: { 'range-slider-target' => 'form'}  do |f| %>
+      <%= f.input :rating, as: :hidden, input_html: { data: { 'range-slider-target' => 'input' } }%>
+    <% end %>
   </div>
-  <%= simple_form_for [@diary, @diary.mood_principal], method: :patch, data: { 'range-slider-target' => 'form'}  do |f| %>
-    <%= f.input :rating, as: :hidden, input_html: { data: { 'range-slider-target' => 'input' } }%>
-  <% end %>
 </div>
 
 

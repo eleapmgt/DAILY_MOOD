@@ -2,7 +2,7 @@ class DiariesController < ApplicationController
   before_action :set_diary, only: %i[edit update]
 
   def index
-    @diaries = Diary.all
+    @diaries = current_user.diaries
   end
 
   def edit
@@ -11,6 +11,13 @@ class DiariesController < ApplicationController
   def update
     @diary.update(diary_params)
     redirect_to diary_moods_path(@diary)
+  end
+
+  def calendar
+    @diaries = current_user.diaries
+    if params[:date]
+      @diary = @diaries.find_by(date: params[:date].to_date)
+    end
   end
 
   private
