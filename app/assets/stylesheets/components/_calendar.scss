@@ -13,3 +13,19 @@
 .simple-calendar th {
   border-style: none;
 }
+
+.simple-calendar td {
+  border: 0px #ddd;
+  border-top-color: #dddddd;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-right-color: #dddddd;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-bottom-color: #dddddd;
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-left-color: #dddddd;
+  border-left-style: solid;
+  border-left-width: 0px;
+}
