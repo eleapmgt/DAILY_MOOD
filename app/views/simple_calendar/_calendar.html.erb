@@ -1,5 +1,5 @@
-<div class="simple-calendar">
-  <div class="calendar-heading text-uppercase text-center m-3">
+<div class="simple-calendar pt-5">
+  <div class="calendar-heading text-uppercase text-center">
     <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
     <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
@@ -7,14 +7,14 @@
 
   <table class="table">
     <thead>
-      <tr>
+      <tr class="tr-calendar">
         <% date_range.slice(0, 7).each do |day| %>
-          <th class="text-uppercase"><%= t('date.abbr_day_names')[day.wday] %></th>
+          <th class="th-calendar text-uppercase"><%= t('date.abbr_day_names')[day.wday] %></th>
         <% end %>
       </tr>
     </thead>
 
-    <tbody class="tbody">
+    <tbody class="tbody-calendar">
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
