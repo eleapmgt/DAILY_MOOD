@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
     @diary = Diary.find(params[:diary_id])
     @mood = Mood.find(params[:id])
     @mood.update(mood_params)
-    redirect_to diary_diaries_reward_path(@diary, @diary.diary_rewards.last)
+    redirect_to new_diary_diaries_reward_path(@diary)
   end
 
   def mood_params
