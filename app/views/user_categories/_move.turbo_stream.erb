@@ -1,0 +1,6 @@
+<%= turbo_stream.replace "other_categories" do %>
+  <%= render partial: "users/categories", locals: { categories: @other_categories } %>
+<% end %>
+<%= turbo_stream.replace "chosen_categories" do %>
+  <%= render partial: "users/categories", locals: { categories: @chosen_categories } %>
+<% end %>

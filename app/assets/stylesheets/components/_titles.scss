@@ -24,7 +24,11 @@
   background-size: 55% calc(2.875rem + 1.5vw);
   background-repeat: no-repeat;
   background-position: bottom;
-  // background-size: 55% 100%;
-  // background-repeat: no-repeat;
-  // background-position: center;
+}
+
+.categories-edit-title {
+  background-image: image-url('tache1.png');
+  background-size: 90% calc(2.875rem + 1.5vw);
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
