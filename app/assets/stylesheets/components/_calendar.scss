@@ -1,17 +1,33 @@
 .simple-calendar .prev-month {
-  background: #8AC6A9;
+  background: white;
+  opacity: 0.3;
 }
 
 .simple-calendar .next-month {
-  background: #E5F8F4;
+  background: white;
+  opacity: 0.3;
+}
+
+.simple-calendar .day {
+  height: 60px;
+  position: relative;
 }
 
 .simple-calendar .today {
-  background: #8AC6A9;
+  background: none;
+
+  .calendar-day {
+    background: $green;
+    color: white;
+  }
 }
 
 .simple-calendar th {
   border-style: none;
+}
+
+.simple-calendar table {
+  border: 0px #dddddd;
 }
 
 .simple-calendar td {
@@ -28,4 +44,67 @@
   border-left-color: #dddddd;
   border-left-style: solid;
   border-left-width: 0px;
+}
+
+.simple-calendar a {
+  text-decoration: none;
+  color: black;
+}
+
+.calendar-heading {
+  margin-bottom: 15px;
+}
+
+.calendar-title {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.th-calendar {
+  font-weight: normal!important;
+  text-align: center!important;
+  background-color: white;
+  opacity: 0.5;
+  font-size: 15px!important;
+}
+
+.tr-calendar {
+  text-align: center!important;
+}
+
+.tbody-calendar {
+  text-align: center!important;
+}
+
+.simple-calendar .has-events {
+  // color: red;
+}
+
+.calendar-day {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-daily-infos {
+  overflow: hidden;
+  min-height: 200px;
+  width: 90%;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.daily-infos {
+  padding: 15px;
 }

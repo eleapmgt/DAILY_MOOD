@@ -1,14 +1,23 @@
 <%= month_calendar(attribute: :date, events: @diaries, partial: "simple_calendar/calendar") do |date, diaries| %>
-  <%= link_to calendar_path(date: date), class:"text-reset" do %>
-    <%= date.day %>
-  <% end %>
-  <% diaries.each do |diary| %>
-    <div>
-      <%= diary.id %>
-    </div>
-  <% end %>
+  <div class="calendar-day <%= 'params-date' if date == params[:date]&.to_date%>">
+    <%= link_to calendar_path(date: date), class:"text-reset" do %>
+      <%= date.day %>
+    <% end %>
+    <%# <% diaries.each do |diary| %>
+      <%# <div>
+        <%= diary.id %>
+      <%# </div>
+    <% end %>
+  </div>
 <% end %>
 
-<% if @diary %>
-  <%= @diary.id %>
-<% end %>
+<div class="card-daily-infos">
+  <div class="daily-infos">
+    <% if @diary %>
+      <div class="opacity-50">
+        <%= @diary.date.strftime("%d/%m") %>
+      </div>
+      <p class="mt-2"><%= @diary.gratitude %></p>
+    <% end %>
+  </div>
+</div>
