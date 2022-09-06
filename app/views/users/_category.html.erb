@@ -2,14 +2,16 @@
   <% if current_user.categories.include? category %>
     <div data-action="click->user-categories#remove"
           data-url="<%= user_category_url(current_user.user_categories.find_by(category: category)) %>"
-          data-user-categories-target="category">
-      <%= category.title %>
+          data-user-categories-target="category"
+          class="mood-category chosen-category">
+      <%= category.title.capitalize %>
     </div>
   <% else %>
     <div data-action="click->user-categories#add"
          data-url="<%= user_categories_url(category_id: category.id) %>"
-          data-user-categories-target="category">
-      <%= category.title %>
+          data-user-categories-target="category"
+          class="mood-category other-category">
+      <%= category.title.capitalize %>
     </div>
   <% end %>
 </div>

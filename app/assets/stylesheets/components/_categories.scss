@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.categories a {
+.mood-category {
   text-decoration: none;
   color: black;
   border-radius: 8px;
@@ -25,20 +25,13 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.chosen-categories {
-  height: 210px;
-}
-
-.other-categories {
-  height: 410px;
-}
-.chosen-categories a {
+.chosen-category {
   background-color: $green;
   display: flex;
   justify-content: center;
 }
 
-.other-categories a {
+.other-category {
   background-color: $blue;
   display: flex;
   justify-content: center;
