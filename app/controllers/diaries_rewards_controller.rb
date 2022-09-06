@@ -1,6 +1,10 @@
 class DiariesRewardsController < ApplicationController
 
-  def show
-    @diary_reward = DiaryReward.find(params[:id])
+  def new
+    @diary_reward = DiaryReward.new()
+  end
+
+  def create
+    # raise
   end
 end

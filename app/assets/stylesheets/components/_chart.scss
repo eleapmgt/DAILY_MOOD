@@ -2,34 +2,49 @@
   text-align: center;
 }
 
-.chart-daily {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.card-category{
+  color: #DEE2E6;
   border-radius: 10px;
-  height: 100px;
-  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  padding: 10px;
 }
+
 
 .chart-mood {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
   border-radius: 10px;
   height: 200px;
-  margin-bottom: 20px;
 }
 
 .chart {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
   border-radius: 10px;
   height: 200px;
-  margin-bottom: 20px;
 }
 
 .charts h2{
  font-size: 20px;
- padding: 2px;
+ padding: 7px;
+ color: black;
+
+}
+
+[aria-expanded="false"] .fa-chevron-up {
+  display: none;
+}
+
+[aria-expanded="true"] .fa-chevron-down {
+  display: none;
+}
+
+.chevrons {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin-bottom: 20px;
 }

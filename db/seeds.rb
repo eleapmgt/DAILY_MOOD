@@ -71,14 +71,14 @@ puts "#{User.count} users created!"
 puts "Destroying moods..."
 puts "Creating moods..."
 
-all_users.each do |user|
-  # creer un user catégorie pour l'humeur generale avec position 1
-  categories = [principal_category] + secondary_categories.sample(3)
-  # pour chaque user on prend 3 catégorie aleatoire  et créer un user_categorie + position 2, 3 et 4
-  categories.each_with_index do |cat, i|
-    UserCategory.create!(user: user, category: cat, position: i + 1)
-  end
-end
+# all_users.each do |user|
+#   # creer un user catégorie pour l'humeur generale avec position 1
+#   categories = [principal_category] + secondary_categories.sample(3)
+#   # pour chaque user on prend 3 catégories aleatoires et créer un user_categorie + position 2, 3 et 4
+#   categories.each_with_index do |cat, i|
+#     UserCategory.create!(user: user, category: cat, position: i + 1)
+#   end
+# end
 
 start_date = 1.week.ago.to_date
 end_date = Date.today - 1.day
