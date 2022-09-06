@@ -10,12 +10,12 @@ export default class extends Controller {
     //  this.img.onload = this.roll.bind(this);
     this.img.src = this.imageValue;
     this.img.onload = this.drawImg.bind(this)
-    console.log(this.ctx);
-    console.log(this.img);
+    // console.log(this.ctx);
+    // console.log(this.img);
   }
 
   drawImg() {
-    this.ctx.drawImage(this.img, -5, -5, 150, 150);
+    this.ctx.drawImage(this.img, 0, 0, 250, 250);
   }
 
   run () {
@@ -23,9 +23,9 @@ export default class extends Controller {
     const n = Number(count.innerText)
     this.ctx.clearRect(0, 0, this.canvasTarget.width, this.canvasTarget.height);
     const delta = 200 / n * 360* 3 * Math.PI / 180;
-    this.ctx.translate(70, 70);
+    this.ctx.translate(125, 125);
     this.ctx.rotate(delta);
-    this.ctx.drawImage(this.img, -75, -75, 150, 150);
+    this.ctx.drawImage(this.img, -125, -125, 250, 250);
     // this.ctx.fillRect(0,0,30,30);
     this.ctx.setTransform(1, 0, 0, 1, 0, 0);
     count.innerText = n + 1
