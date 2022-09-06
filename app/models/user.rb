@@ -11,12 +11,17 @@ class User < ApplicationRecord
   after_create :create_diary
 
   def create_diary
-    Diary.create(user: self, date: Date.today)
-
-    # Mood.create(diary: diaries.last, principal: true, position: 1)
-    # Mood.create(diary: diaries.last, principal: false, position: 2)
-    # Mood.create(diary: diaries.last, principal: false, position: 3)
-    # Mood.create(diary: diaries.last, principal: false, position: 4)
+    d = Diary.create!(user: self, date: Date.today)
+    if self.diaries.size <= 1
+      categories = [Category.principal] + Category.secondary.sample(3)
+      categories.each_with_index do |cat, index|
+        UserCategory.create!(user: self, category: cat, position: index + 1)
+      end
+    end
+    self.categories.each do |cat|
+      principal_category = Category.principal
+      Mood.create!(diary: d, rating: 0, category: cat, principal: cat == principal_category)
+    end
 
     # système pour ne pas réavoir deux fois la même reward
     # if diaries.present?
