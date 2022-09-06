@@ -80,6 +80,8 @@ puts "Creating moods..."
 #   end
 # end
 
+gratitude_text = ["Aujourd'hui "]
+
 start_date = 1.week.ago.to_date
 end_date = Date.today - 1.day
 (start_date..end_date).each do |day|
