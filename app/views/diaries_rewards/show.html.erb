@@ -3,9 +3,11 @@
   <h1>Tourne la roue de la positivité</h1>
   <br>
 
-      <div id="count" class= "d-none">0</div>
+  <div class="container-center">
+  <div class="wheel" data-controller="wheel" data-wheel-image-value="<%= image_url('wheelthree.png') %>">
+        <div id="count" class= "d-none">0</div>
 
-     <div class="btn" data-action= "click->wheel#roll"> <canvas id="canvas" data-wheel-target="canvas"></canvas></div>
+      <div class="btn-wheel" data-action= "click->wheel#roll"> <canvas id="canvas" width="250" height="250" data-wheel-target="canvas"></canvas></div>
 
 
 <div class= "end-btn-container">
