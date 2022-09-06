@@ -3,13 +3,13 @@
 <%# itérer sur toutes les catégories
 le toggle sera sur true ou false en fonction de si c'est une catégorie du user%>
 
-<% @categories.each do |category| %>
-  <h1><%= category.title %></h1>
-  <% if current_user.categories.include? category %>
-    Inclus
-    <%= link_to category.title, user_category_path(current_user.user_categories.find_by(category: category)), data: { turbo_method: :delete} %>
-  <% else %>
-    Exclus
-    <%= link_to category.title, user_categories_path(category_id: category.id), data: { turbo_method: :post} %>
-  <% end %>
-<% end %>
+
+<%#= turbo_frame_tag "chosen_categories" do %>
+  <%= render "categories", categories: @chosen_categories %>
+<%# end %>
+
+<hr>
+
+<%#= turbo_frame_tag "other_categories" do %>
+  <%= render "categories", categories: @other_categories %>
+<%# end %>

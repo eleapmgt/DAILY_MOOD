@@ -1,0 +1,14 @@
+<div id = "<%= dom_id(category) %>" >
+  <% if current_user.categories.include? category %>
+    <%= link_to category.title,
+    user_category_path(current_user.user_categories.find_by(category: category)),
+    data: { turbo_method: :delete},
+    class: "text-reset" %>
+  <% else %>
+
+    <%= link_to category.title,
+    user_categories_path(category_id: category.id),
+    data: { turbo_method: :post},
+    class: "text-reset" %>
+  <% end %>
+</div>
