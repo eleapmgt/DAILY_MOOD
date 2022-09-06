@@ -2,14 +2,16 @@
 
 <%# itérer sur toutes les catégories
 le toggle sera sur true ou false en fonction de si c'est une catégorie du user%>
+<div class="categories-container">
+  <div class="categories chosen-categories">
+    <%#= turbo_frame_tag "chosen_categories" do %>
+      <%= render "categories", categories: @chosen_categories %>
+    <%# end %>
+  </div>
 
-
-<%#= turbo_frame_tag "chosen_categories" do %>
-  <%= render "categories", categories: @chosen_categories %>
-<%# end %>
-
-<hr>
-
-<%#= turbo_frame_tag "other_categories" do %>
-  <%= render "categories", categories: @other_categories %>
-<%# end %>
+  <div class="categories other-categories">
+    <%#= turbo_frame_tag "other_categories" do %>
+      <%= render "categories", categories: @other_categories %>
+    <%# end %>
+  </div>
+</div>
