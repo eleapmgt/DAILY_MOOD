@@ -6,8 +6,10 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 import RangeSliderController from "./range_slider_controller"
+import UserCategoriesController from "./user_categories_controller"
 import WheelController from "./wheel_controller"
 
 application.register("hello", HelloController)
 application.register('range-slider', RangeSliderController)
 application.register('wheel', WheelController)
+application.register("user-categories", UserCategoriesController)
