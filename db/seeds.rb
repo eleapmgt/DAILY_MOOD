@@ -139,7 +139,7 @@ index = 0
 
   # USERS FAKER
   20.times do
-    user = User.create(email: Faker::Internet.email, password: "secret", username: Faker::Name.name)
+    user = User.create(username: Faker::Games::LeagueOfLegends.champion, email: Faker::Internet.email, password: "secret")
     diary_user = Diary.create!(gratitude: gratitude_text[index], user: user, date: day)
     user.categories.each do |cat|
       Mood.create!(diary: diary_user, principal: cat == principal_category, rating: rand(-5..5), category: cat)
@@ -150,3 +150,8 @@ end
 
 puts "#{User.count} fake users created!"
 puts "#{Mood.count} moods created!"
+
+# CREATE DOCTOR
+
+doctor = User.create(username: "DrMundo", email: "mundodu33@hotmail.com", password: "secret")
+doctor.update(is_doctor: true)
