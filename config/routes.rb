@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit]
   resources :user_categories, only: [:create, :destroy]
+  resources :patients, only: [:index, :show]
 end

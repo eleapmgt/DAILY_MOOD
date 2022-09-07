@@ -1,0 +1,34 @@
+.patient-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.patient-card {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: $purple;
+  align-items: center;
+}
+
+.patient-info {
+
+}
+
+.patient-button {
+  background-image: url("plus_button.svg");
+  background-repeat: no-repeat;
+}
+
+.patients-title {
+  background-image: image-url('tache2.png');
+  background-size: 80% calc(2.875rem + 1.5vw);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
