@@ -8,12 +8,12 @@
 }
 
 .categories {
-  background-color: $aliceblue;
+  background-color: white;
   padding: 12px;
-  border: 1px solid $green;
-  border-radius: 5px;
-  width: 80%;
+  border-radius: 10px;
+  width: 90%;
   align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .mood-category {
@@ -21,7 +21,7 @@
   border-radius: 8px;
   padding: 6px;
   margin: 12px 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .chosen-category {
@@ -32,7 +32,7 @@
 }
 
 .other-category {
-  background-color: $blue;
+  background-color: $purple;
   color: black;
   display: flex;
   justify-content: center;
