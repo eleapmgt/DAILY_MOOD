@@ -1,0 +1,25 @@
+.search-button {
+  font-size: 20px;
+  background-color: $aliceblue;
+  border: 0;
+}
+
+.search-input {
+  border: 0;
+}
+
+.search-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-weight: thin;
+  font-style: italic;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.searchbar {
+  border-radius: 5px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}

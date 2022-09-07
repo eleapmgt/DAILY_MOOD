@@ -1,0 +1,25 @@
+
+<div class="patient-cards">
+  <h1 class="patients-title">Mes patients</h1>
+
+<div class="searchbar">
+  <%= form_with url: patients_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input",
+      placeholder: "Trouver un patient"
+    %>
+    <%= submit_tag "🔍", class: "search-button" %>
+  <% end %>
+</div>
+
+  <% @patients.each do |patient| %>
+    <div class="patient-card">
+      <div class="info-patient">
+        <p><%= patient.username.capitalize %></p>
+        <p><%= patient.email %></p>
+      </div>
+      <%= link_to "", patient_path(patient), class: "patient-button svg-green p-3" %>
+    </div>
+  <% end %>
+</div>
