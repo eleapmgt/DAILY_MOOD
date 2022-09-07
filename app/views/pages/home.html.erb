@@ -15,6 +15,7 @@
   <div class="my-5 d-flex justify-content-center">
     <% if user_signed_in? %>
       <%= link_to "DAILY", edit_diary_path(current_diary), class: "home-button" %>
+
   </div>
       <%= render "/shared/last_gratitudes" %>
     <% else %>
