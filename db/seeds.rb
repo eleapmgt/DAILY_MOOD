@@ -80,13 +80,23 @@ puts "Creating moods..."
 #   end
 # end
 
-gratitude_text = ["Aujourd'hui "]
+gratitude_text = ["Aujourd'hui, je me suis senti bien. J'ai été faire une balade avec mes enfants et j'ai rendu visite à une amie.", "Je suis rentré de vacances et c'était trop bien. J'ai pu profiter de la mer et des couchers de soleil et prendre du temps pour moi.",
+"Je suis en repos et j'en ai profité pour ranger mon appartement, faire des courses et me promener au bord de la rivière.", "Ce jour, j'ai démarré mon nouveau poste eu seing de l'entreprise, pleins de nouveau projet sont à venir et cela me réjouit. J'ai aussi été boire un verre avec un ami de longue date.",
+"Après ma journée de travail, je suis allé faire du sport et j'ai rejoint des amis en centre-ville pour manger au restaurant.", "J'ai posé mes jours de congés pour cet hiver et j'ai commencé a réservé des activités en famille. J'ai également rendu visite à mes grands-parents.",
+"Je me suis réveillé de bonne humeur et j'ai décidé de rejoindre des amis en vacances dans le sud-est. Je suis excité a l'idée de changer d'air et passer du bon temps.", "En ce jour, j'ai pris du temps pour prendre soin de moi : je suis allé faire un massage et en rentrant, j'ai pris un bain. Je suis contente d'avoir réussi a accepté de ne pas être productive et de seulement pensé a mon bien être.",
+"Même s'il est difficile de trouver du positif dans cette journée, j'ai pris un rendez-vous médical important.", "Aujourd'hui, j'ai joué avec mon chat et j'ai commencé une série que je voulais voir depuis longtemps."]
 
 start_date = 1.week.ago.to_date
 end_date = Date.today - 1.day
+index = 0
 (start_date..end_date).each do |day|
   # pour chaque jours je créer un daily a la date
-  d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade, date: day)
+  # d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade, date: day)
+  d = Diary.create!(gratitude: gratitude_text[index], user: sherazade, date: day)
+  d = Diary.create!(gratitude: gratitude_text[index], user: elea, date: day)
+  d = Diary.create!(gratitude: gratitude_text[index], user: oceane, date: day)
+  d = Diary.create!(gratitude: gratitude_text[index], user: alexis, date: day)
+  index += 1
   d.user.categories.each do |cat|
     Mood.create!(diary: d, principal: cat == principal_category, rating: rand(-5..5), category: cat)
   end
