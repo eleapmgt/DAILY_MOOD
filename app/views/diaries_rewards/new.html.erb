@@ -4,6 +4,7 @@
   <br>
 
   <div class="container-center">
+
     <div class="wheel" data-controller="wheel" data-wheel-image-value="<%= image_url('wheelthree.png') %>" data-wheel-id-value="<%= @diary.id %>">
       <div id="count" class= "d-none">0</div>
       <div class="btn-wheel" data-action="click->wheel#roll">
@@ -14,6 +15,6 @@
       </div>
       <div data-wheel-target="reward">
         <%= render 'modal', diary_reward: @diary_reward %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
