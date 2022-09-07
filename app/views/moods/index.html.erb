@@ -34,18 +34,21 @@
       <div></div>
       <p class="form-date">
 
-      </p>
-      <div class="form-content">
-        <%= simple_form_for @diary.mood_principal, method: :patch, url:  diary_content_path(@diary, @diary.mood_principal) do |f| %>
-          <%= f.input :content,
-                      as: :text,
-                      label: "Ecris un commentaire en rapport avec ton humeur:",
-                      placeholder: "Aujourd'hui, je me sens...",
-                      input_html: {class: "gratitude-control"}
-          %>
-          <%= f.submit "▷", class: "form-button play-button" %>
-        <% end %>
-      </div>
+
+      
+
+    </p>
+    <div class="form-content">
+      <%= simple_form_for @diary.mood_principal, method: :patch, url:  diary_content_path(@diary, @diary.mood_principal) do |f| %>
+        <%= f.input :content,
+                    as: :text,
+                    label: "Ecris un commentaire en rapport avec ton humeur:",
+                    placeholder: "Aujourd'hui, je me sens...",
+                    input_html: {class: "gratitude-control mood-text-input"}
+        %>
+        <%= f.submit "▷", class: "form-button play-button" %>
+      <% end %>
+
     </div>
   </div>
 
