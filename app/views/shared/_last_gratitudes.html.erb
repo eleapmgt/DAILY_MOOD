@@ -19,8 +19,8 @@
     </div>
 
     <div class="plus-button d-flex justify-content-end align-items-center">
-      <%= link_to diaries_path do %>
-        <%= image_tag "plus_button.svg", alt: "button", size: "60x60", class: "svg-green p-3" %>
+      <%= link_to calendar_path(date: Date.today) do %>
+        <%= image_tag "calendar.svg", alt: "button", size: "60x60", class: "svg-green p-3" %>
       <% end %>
     </div>
   </div>
