@@ -39,16 +39,34 @@ puts "Creating rewards..."
 
 categories = ["music", "article", "citation", "poem", "video", "graphic art", "film"]
 
- url = "https://www.youtube.com/watch?v=4cNJAWY8MKQ&list=OLAK5uy_ljHjl6SDNCIw8cOZMrutKpROHKpC0qsbM&index=2"
- Reward.create(category: "musique", content_url: "https://www.youtube.com/watch?v=4cNJAWY8MKQ&list=OLAK5uy_ljHjl6SDNCIw8cOZMrutKpROHKpC0qsbM&index=2")
+ url = '<iframe width="300" height="300" src="https://www.youtube.com/embed/4cNJAWY8MKQ?list=OLAK5uy_ljHjl6SDNCIw8cOZMrutKpROHKpC0qsbM" title="Moments paisibles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ Reward.create(category: "musique", content_url: url)
+ # url = "https://www.culturefemme.com/bien-etre/bien-etre-ces-5-boissons-du-matin-qui-font-du-bien-a-votre-corps/"
+ # https://github.com/wbdana/opengraph-io-ruby
+ # https://dashboard.opengraph.io/apis/Opengraphio
 
- url = "https://www.culturefemme.com/bien-etre/bien-etre-ces-5-boissons-du-matin-qui-font-du-bien-a-votre-corps/"
+  url =  {
+    "title"=>"Bien-être : Ces 5 boissons du matin qui font du bien à votre corps !",
+    "description"=>  "Contrairement à ce qu’on peut penser, ces nourritures et breuvages sont faciles à trouver, peu coûteux et faciles à préparer. Retrouvez ici 5 de ces boissons que vous pouvez prendre le matin et qui feront beaucoup de bien à votre corps. Le thé vert, qui contient des antioxydants Prendre un thé détox en début de...",
+    "type"=>"article",
+    "locale"=>"fr_FR",
+    "image"=>  "https://www.culturefemme.com/wp-content/uploads/2022/08/5-boissons-du-matin-qui-font-du-bien-a-votre-corps-e1661496977482.jpg",
+    "imageType"=>"image/jpeg",
+    "imageWidth"=>"1200",
+    "imageHeight"=>"630",
+    "url"=>"https://www.culturefemme.com/bien-etre/bien-etre-ces-5-boissons-du-matin-qui-font-du-bien-a-votre-corps/",
+    "favicon"=>  "https://www.culturefemme.com/wp-content/uploads/2020/12/xculturefemme-300x300.png.pagespeed.ic.ejcQYe2Yac.webp",
+    "site_name"=>"Culturefemme.com",
+    "articlePublishedTime"=>"2022-08-26T07:30:00+00:00",
+    "articleModifiedTime"=>"2022-08-26T06:56:52+00:00"
+  }.to_json
+
  Reward.create(category: "article", content_url: url)
 
  url = "https://i.pinimg.com/736x/9e/14/f7/9e14f744c7052c8e4e5b81479fa9184e.jpg"
  Reward.create(category: "citation", content_url: url)
 
- url = "https://www.youtube.com/watch?v=lpDUObCK1is&t=34s"
+ url = '<iframe width="300" height="300" src="https://www.youtube.com/embed/lpDUObCK1is" title="Vers une vie sereine: MEDITATION guidée - Etre présent (mindfulness - pleine conscience)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  Reward.create(category: "video", content_url: url)
 
 

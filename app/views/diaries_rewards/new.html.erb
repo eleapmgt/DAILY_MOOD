@@ -1,27 +1,20 @@
 
-<div data-controller="wheel" data-wheel-image-value="<%= image_url('wheeltwo.png') %>">
-  <h1>Tourne la roue de la positivité</h1>
+
+  <h1 class='text-center'>Tourne la roue de la positivité</h1>
   <br>
 
   <div class="container-center">
-  <div class="wheel" data-controller="wheel" data-wheel-image-value="<%= image_url('wheelthree.png') %>">
-        <div id="count" class= "d-none">0</div>
 
-      <div class="btn-wheel" data-action= "click->wheel#roll"> <canvas id="canvas" width="250" height="250" data-wheel-target="canvas"></canvas></div>
-
-
-<div class= "end-btn-container">
-  <%= link_to "Terminé", "/", class: "end-button" %>
-<div data-controller="wheel">
-  <div class="entire-form">
-    <h1 class="reward-title">Tourne la roue de la positivité</h1>
-
-    <div id="count">0</div>
-
-     <button class="btn" data-action= "click -> wheel#roll"> <canvas id="canvas" data-wheel-target="canvas"></canvas></button>
-
-    <div class= "end-btn-container">
-      <%= link_to "Terminé", "/", class: "end-button" %>
-    </div>
-  </div>
-</div>
+    <div class="wheel" data-controller="wheel" data-wheel-image-value="<%= image_url('wheelthree.png') %>" data-wheel-id-value="<%= @diary.id %>">
+      <div id="count" class= "d-none">0</div>
+      <div class="btn-wheel" data-action="click->wheel#roll">
+        <canvas id="canvas" width="250" height="250" data-wheel-target="canvas"></canvas>
+      </div>
+      <div class= "end-btn-container">
+        <%= link_to "Terminé", "/", class: "end-button" %>
+      </div>
+      <div data-wheel-target="reward">
+        <%= render 'modal', diary_reward: @diary_reward %>
+          </div>
+        </div>
+      </div>
