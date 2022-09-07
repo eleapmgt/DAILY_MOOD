@@ -1,12 +1,7 @@
 <%= month_calendar(attribute: :date, events: @diaries, partial: "simple_calendar/calendar") do |date, diaries| %>
-  <div class="calendar-day <%= 'params-date' if date == params[:date]&.to_date%>">
+  <div class="calendar-day <%= 'selected-day' if date == params[:date]&.to_date %>">
     <%= link_to calendar_path(date: date), class:"text-reset" do %>
       <%= date.day %>
-    <% end %>
-    <%# <% diaries.each do |diary| %>
-      <%# <div>
-        <%= diary.id %>
-      <%# </div>
     <% end %>
   </div>
 <% end %>

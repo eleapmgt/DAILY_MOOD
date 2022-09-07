@@ -52,7 +52,12 @@
 }
 
 .calendar-heading {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  a {
+    color: $green;
+    font-size: 20px;
+  }
 }
 
 .calendar-title {
@@ -107,4 +112,8 @@
 
 .daily-infos {
   padding: 15px;
+}
+
+.selected-day {
+  border: 2px solid $green;
 }
