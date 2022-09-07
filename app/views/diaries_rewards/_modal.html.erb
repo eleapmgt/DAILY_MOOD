@@ -1,0 +1,27 @@
+
+<div class="modal fade" id="modalReward" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Reward !!!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-center" >
+        <% if ["video", "musique"].include? diary_reward&.reward&.category %>
+          <%= diary_reward&.reward&.content_url.html_safe%>
+        <% elsif ["citation"].include? diary_reward&.reward&.category %>
+          <%= image_tag diary_reward&.reward&.content_url, width: "300px", height: "300px"  %>
+        <% elsif ["article"].include? diary_reward&.reward&.category %>
+         <div class="card" style="width: 18rem;">
+            <img src="<%= JSON.parse(diary_reward&.reward&.content_url)["image"] %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= JSON.parse(diary_reward&.reward&.content_url)["title"] %></h5>
+              <p class="card-text"><%= JSON.parse(diary_reward&.reward&.content_url)["description"] %></p>
+              <a href="<%= JSON.parse(diary_reward&.reward&.content_url)["url"] %>" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

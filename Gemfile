@@ -51,11 +51,15 @@ gem "sassc-rails"
 # The gem version mirrors the included version of charts
 gem "chartkick"
 
+gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
+
 gem "groupdate"
 
 gem "simple_calendar", "~> 2.4"
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+gem 'opengraph-io'
 
 gem "devise"
 gem "autoprefixer-rails"

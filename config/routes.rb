@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :diaries, only: [:edit, :update, :index] do
     resources :moods, only: [:index, :update, :create, :destroy]
     resources :contents, only: :update
-    resources :diaries_rewards, only: :new
+    resources :diaries_rewards, only: %i[new create]
   end
   resources :users, only: [:show, :edit]
   resources :user_categories, only: [:create, :destroy]
