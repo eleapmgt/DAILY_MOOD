@@ -64,7 +64,7 @@ oceane = User.create!(email: "sese@hotmail.com", password: "secret", username: "
 alexis = User.create!(email: "alpaga@hotmail.com", password: "secret", username: "Alpaga")
 sherazade = User.create!(email: "sheshe@hotmail.com", password: "secret", username: "Sheshe")
 
-all_users = [elea, alexis, oceane, sherazade]
+# all_users = [elea, alexis, oceane, sherazade]
 
 puts "#{User.count} users created!"
 
@@ -92,15 +92,43 @@ index = 0
 (start_date..end_date).each do |day|
   # pour chaque jours je créer un daily a la date
   # d = Diary.create!(gratitude: Faker::Lorem.paragraphs(number: 2), user: sherazade, date: day)
-  d = Diary.create!(gratitude: gratitude_text[index], user: sherazade, date: day)
-  d = Diary.create!(gratitude: gratitude_text[index], user: elea, date: day)
-  d = Diary.create!(gratitude: gratitude_text[index], user: oceane, date: day)
-  d = Diary.create!(gratitude: gratitude_text[index], user: alexis, date: day)
+  diary_elea = Diary.create!(gratitude: gratitude_text[index], user: elea, date: day)
+  diary_sherazade = Diary.create!(gratitude: gratitude_text[index], user: sherazade, date: day)
+  diary_oceane = Diary.create!(gratitude: gratitude_text[index], user: oceane, date: day)
+  diary_alexis = Diary.create!(gratitude: gratitude_text[index], user: alexis, date: day)
   index += 1
-  d.user.categories.each do |cat|
-    Mood.create!(diary: d, principal: cat == principal_category, rating: rand(-5..5), category: cat)
+
+
+  elea.categories.each do |cat|
+    Mood.create!(diary: diary_elea, principal: cat == principal_category, rating: rand(-5..5), category: cat)
   end
-  DiaryReward.create!(diary: d, reward: Reward.all.sample)
+  DiaryReward.create!(diary: diary_elea, reward: Reward.all.sample)
+
+  sherazade.categories.each do |cat|
+    Mood.create!(diary: diary_sherazade, principal: cat == principal_category, rating: rand(-5..5), category: cat)
+  end
+  DiaryReward.create!(diary: diary_sherazade, reward: Reward.all.sample)
+
+  oceane.categories.each do |cat|
+    Mood.create!(diary: diary_oceane, principal: cat == principal_category, rating: rand(-5..5), category: cat)
+  end
+  DiaryReward.create!(diary: diary_oceane, reward: Reward.all.sample)
+
+  alexis.categories.each do |cat|
+    Mood.create!(diary: diary_alexis, principal: cat == principal_category, rating: rand(-5..5), category: cat)
+  end
+  DiaryReward.create!(diary: diary_alexis, reward: Reward.all.sample)
+
+  # USERS FAKER
+  20.times do
+    user = User.create(email: Faker::Internet.email, password: "secret", username: Faker::Name.name)
+    diary_user = Diary.create!(gratitude: gratitude_text[index], user: user, date: day)
+    user.categories.each do |cat|
+      Mood.create!(diary: diary_user, principal: cat == principal_category, rating: rand(-5..5), category: cat)
+    end
+    DiaryReward.create!(diary: diary_user, reward: Reward.all.sample)
+  end
 end
 
+puts "#{User.count} fake users created!"
 puts "#{Mood.count} moods created!"
