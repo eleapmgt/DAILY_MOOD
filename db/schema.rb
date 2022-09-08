@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_084221) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
+    t.string "cg"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_moods_on_category_id"
     t.index ["diary_id"], name: "index_moods_on_diary_id"

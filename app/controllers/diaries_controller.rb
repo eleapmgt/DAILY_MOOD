@@ -9,10 +9,10 @@ class DiariesController < ApplicationController
   end
 
   def edit
-    unless @diary.gratitude.nil?
-      flash[:notice] = "Tu as déjà fait ton daily aujourd'hui, reviens demain."
-      redirect_to root_path
-    end
+    # unless @diary.gratitude.nil?
+    #   # flash[:notice] = "Tu as déjà fait ton daily aujourd'hui, reviens demain."
+    #   redirect_to root_path
+    # end
   end
 
   def update
