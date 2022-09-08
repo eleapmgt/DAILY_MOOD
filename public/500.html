@@ -10,6 +10,8 @@
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .rails-default-error-page div.dialog {
@@ -17,7 +19,14 @@
     max-width: 33em;
     margin: 4em auto 0;
   }
+  .rails-default-error-page div.image {
+    background-image: url("looney.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
 
+  }
   .rails-default-error-page div.dialog > div {
     border: 1px solid #CCC;
     border-right-color: #999;
@@ -57,10 +66,11 @@
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
   <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
+
+    <h1>We're sorry, but something went wrong.</h1>
+
     <p>If you are the application owner check the logs for more information.</p>
   </div>
+  <div class="image"></div>
 </body>
 </html>

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit]
   resources :user_categories, only: [:create, :update, :destroy]
   resources :patients, only: [:index, :show]
+  get '*unmatched_route', to: 'pages#home'
 end
