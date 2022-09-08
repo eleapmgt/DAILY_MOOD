@@ -12,12 +12,12 @@
             min="-5"
             max="5"
             step="1">
+      <div class="d-flex justify-content-between align-items-start w-100">
+      <div class="side-value">-5</div>
       <output class="range-slider__value"
               data-range-slider-target="value">
       </output>
-      <div class="d-flex justify-content-between w-100">
-      <div>-5</div>
-      <div>5</div>
+      <div class="side-value">5</div>
       </div>
       <%= simple_form_for [@diary, @diary.mood_principal], method: :patch, data: { 'range-slider-target' => 'form'}  do |f| %>
         <%= f.input :rating, as: :hidden, input_html: { data: { 'range-slider-target' => 'input' } }%>
@@ -35,7 +35,7 @@
       <p class="form-date">
 
 
-      
+
 
     </p>
     <div class="form-content">
@@ -70,12 +70,13 @@
                 min="-5"
                 max="5"
                 step="1">
-          <output class="range-slider__value"
+
+          <div class="d-flex justify-content-between align-items-start w-100">
+          <div class="side-value">-5</div>
+                <output class="range-slider__value"
                   data-range-slider-target="value">
                   </output>
-          <div class="d-flex justify-content-between w-100">
-          <div>-5</div>
-          <div>5</div>
+          <div class="side-value">5</div>
           </div>
           <%= simple_form_for [@diary, mood], method: :patch, data: { 'range-slider-target' => 'form'}  do |f| %>
             <%= f.input :rating, as: :hidden, input_html: { data: { 'range-slider-target' => 'input' } }%>
