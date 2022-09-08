@@ -24,7 +24,7 @@
     <% end %>
   </div>
 </div>
-<% unless current_diary&.gratitude&.blank? %>
+<% if user_signed_in? && !current_diary&.gratitude&.blank? %>
   <p>Tu as déjà fait ton daily aujourd'hui, reviens demain.</p>
 <% end %>
 <% if user_signed_in? %>

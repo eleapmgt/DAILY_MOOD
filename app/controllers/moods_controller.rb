@@ -1,10 +1,11 @@
 class MoodsController < ApplicationController
 
   def index
-    @moods = Mood.all
     @mood = Mood.new
     @diary = Diary.find(params[:diary_id])
+    @moods = @diary.moods
   end
+
 
   def create
     @diary = Diary.find(params[:diary_id])
