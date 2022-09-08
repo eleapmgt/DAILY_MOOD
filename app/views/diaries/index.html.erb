@@ -9,7 +9,7 @@
 
   <% @user_categories.each_with_index do |cat, i| %>
     <div class="card-category">
-      <h2><%= cat.title %></h2>
+      <h2><%= cat.title.capitalize %></h2>
       <% color = charts_colors[i] %>
       <div class ="chart-mood" >
         <%= area_chart current_user.moods.where(category: cat).map {|mood| ["#{mood.diary.date}", mood.rating]}.to_h, width: "100%", height: "200px", min: -5, max: 5, colors: [color,"#666"] %>
@@ -25,7 +25,7 @@
   <div class="collapse" id="collapseExample">
     <% @other_categories.each_with_index do |cat, i| %>
       <div class="card-category">
-        <h2><%= cat.title %></h2>
+        <h2><%= cat.title.capitalize %></h2>
         <% color = charts_colors[i] %>
         <div class ="chart" >
           <%= area_chart current_user.moods.where(category: cat).map {|mood| ["#{mood.diary.date}", mood.rating]}.to_h, width: "100%", height: "200px", min: -5, max: 5 , colors: [color,"#666"] %>

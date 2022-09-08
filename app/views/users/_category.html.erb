@@ -5,7 +5,8 @@
           data-user-categories-target="category"
           class="mood-category chosen-category"
           >
-      <%= category.title.capitalize %> <%#= current_user.user_categories.find_by(category: category).position %>
+      <%= category.title.capitalize %>
+      <%# <%= current_user.user_categories.find_by(category: category).position %>
     </div>
   <% else %>
     <div data-action="click->user-categories#add"
