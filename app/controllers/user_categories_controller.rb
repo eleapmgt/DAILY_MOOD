@@ -4,7 +4,7 @@ class UserCategoriesController < ApplicationController
     @user_category.save
     respond_to do |format|
       format.html { redirect_to edit_user_path(current_user) }
-      format.text { render partial: "users/category", locals: { category: @user_category.category}, formats: [:html] }
+      format.text { render partial: "users/category", locals: { category: @user_category.category }, formats: [:html] }
     end
   end
 
@@ -13,7 +13,7 @@ class UserCategoriesController < ApplicationController
     @user_category.destroy
     respond_to do |format|
       format.html { redirect_to edit_user_path(current_user) }
-      format.text { render partial: "users/category", locals: { category: @user_category.category}, formats: [:html] }
+      format.text { render partial: "users/category", locals: { category: @user_category.category }, formats: [:html] }
     end
   end
 end
