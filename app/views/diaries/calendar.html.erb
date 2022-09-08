@@ -10,8 +10,9 @@
   <div class="daily-infos">
     <% if @diary %>
       <div class="daily-infos-gratitude">
-        <div class="opacity-50">
+        <div class="opacity-50 d-flex align-content-left">
           <%= @diary.date.strftime("%d/%m") %>
+          <p>&nbsp- Mes gratitudes</p>
         </div>
         <p class="mt-2"><%= @diary.gratitude %></p>
       </div>
@@ -20,13 +21,14 @@
           <%= image_tag "plus_button.svg", alt: "button", size: "60x60", class: "svg-green p-3" %>
         <%# </button>
         </p> %>
-      <div class="daily-infos-mood">
-        <div class = "chevrons chevrons-mood mb-0" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <div class="daily-infos-mood mb-0 mt-4">
+        <p class="opacity-50 text-left">Mon humeur</p>
+        <%# <div class = "chevrons chevrons-mood" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           <i class="fa-solid fa-chevron-up fa-2xl"></i>
           <i class="fa-solid fa-chevron-down fa-2xl"></i>
-        </div>
-        <div class="collapse" id="collapseExample">
-          <div class="">
+        </div> %>
+        <%# <div class="collapse" id="collapseExample"> %>
+          <div class="mt-2">
             <%= @diary.mood_principal.content %>
           </div>
         </div>
