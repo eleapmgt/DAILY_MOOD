@@ -3,10 +3,10 @@
 <%# itérer sur toutes les catégories
 le toggle sera sur true ou false en fonction de si c'est une catégorie du user%>
 <div class="categories-container" data-controller="user-categories">
-  <div class="categories chosen-categories" data-user-categories-target="chosen">
+  <div class="categories chosen-categories">
     <h3>Votre sélection</h3>
 
-    <div data-controller="sortable" data-sortable-animation-value="150" data-sortable-resource-name-value="user_category">
+    <div data-controller="sortable" data-user-categories-target="chosen" data-sortable-animation-value="150" data-sortable-resource-name-value="user_category">
           <div data-url="<%= user_category_url(current_user.user_categories.find_by(category: Category.principal)) %>"
           class="d-none"
           >
