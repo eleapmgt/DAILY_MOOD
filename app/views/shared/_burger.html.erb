@@ -28,7 +28,7 @@
       <li class="nav-item active">
       <% if user_signed_in? %>
         <%#= link_to "", destroy_user_session_path, class: "nav-link fa-solid fa-user fa-2xl", data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vous déconnecter ?" } %>
-        <%= link_to "", user_path(current_user), class: "nav-link fa-solid fa-user fa-2xl" %>
+        <%= link_to "", edit_user_path(current_user), class: "nav-link fa-solid fa-user fa-2xl" %>
       <% else %>
         <%= link_to "", user_session_path, class: "nav-link fa-solid fa-user fa-2xl" %>
       <% end %>
