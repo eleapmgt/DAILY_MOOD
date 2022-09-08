@@ -1,19 +1,29 @@
 <div class="container charts">
   <div class="entire form">
-    <h1><%= @patient.username %></h1>
-    <%# <h1 class="dashboard-title">Mon tableau de bord</h1> %>
+    <div class="d-flex align-items-center justify-content-between">
+      <h1><%= @patient.username %></h1>
+      <%= mail_to @patient.email, "", class: "fa-solid fa-paper-plane mail-button" %>
+    </div>
+    <% charts_colors = ["#EEE1FF", "#BFEEE4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82", "#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82" ]%>
 
-  <% charts_colors = ["#8AC6A9", "#EEE1FF", "#BFEEE4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82", "#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82" ]%>
-
-  <% @patient.categories.each_with_index do |cat, i| %>
-    <div class="card-category">
-      <h2><%= cat.title.capitalize %></h2>
-      <% color = charts_colors[i] %>
+    <div class="card-category principal-category">
+      <h2><%= @principal_category.title.capitalize %></h2>
+      <% color = "#8AC6A9" %>
       <div class ="chart-mood" >
-        <%= area_chart @patient.moods.where(category: cat).map {|mood| ["#{mood.diary.date}", mood.rating]}.to_h, width: "100%", height: "200px", min: -5, max: 5, colors: [color,"#666"] %>
+        <%= area_chart @patient.moods.where(category: @principal_category).map {|mood| ["#{mood.diary.date}", mood.rating]}.to_h, width: "100%", height: "200px", min: -5, max: 5, colors: [color,"#666"] %>
       </div>
     </div>
-  <% end %>
 
+    <div class="secondary-categories">
+      <% @patient.categories.where(id: @secondary_categories.map(&:id)).each_with_index do |cat, i| %>
+        <div class="card-category">
+          <h2><%= cat.title.capitalize %></h2>
+          <% color = charts_colors[i] %>
+          <div class ="chart-mood" >
+            <%= area_chart @patient.moods.where(category: cat).map {|mood| ["#{mood.diary.date}", mood.rating]}.to_h, width: "100%", height: "200px", min: -5, max: 5, colors: [color,"#666"] %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
