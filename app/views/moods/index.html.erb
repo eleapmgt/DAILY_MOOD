@@ -59,7 +59,7 @@
       <div class="small_range_slider" id="mood-<%=i + 1%>">
         <h3><%= mood.title %></h3>
         <div class="range-slider" data-controller="range-slider" data-range-slider-mood-value="<%= diary_mood_path(@diary, mood) %>">
-          <label for="customRange"><%= mood.category.title %></label>
+          <label for="customRange" class="mb-2"><%= mood.category.title.capitalize %></label>
           <input type="range"
                 name="moodScore"
                 class="range-slider__range"

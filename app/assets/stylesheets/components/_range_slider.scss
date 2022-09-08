@@ -34,7 +34,7 @@ $dist: $track-w - $thumb-d;
 	position: relative;
   width: 90%;
   flex: 1 1 100%;
-  margin: 15px;
+  margin: 12px;
   padding: 0;
 
   input[type="range"] {
@@ -110,11 +110,11 @@ $dist: $track-w - $thumb-d;
 }
 
 .range-slider__value{
-margin-top: 10px;
- font-weight: bold;
- font-size: 21px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .side-value{
-opacity: 0.33;
+  opacity: 0.33;
 }
