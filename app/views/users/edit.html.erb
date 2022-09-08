@@ -1,3 +1,7 @@
+<div class="sign-out">
+  <%= link_to "", destroy_user_session_path, class: "nav-link fa-solid fa-right-from-bracket sign-out-btn", data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vous déconnecter ?" } %>
+</div>
+
 <h1 class="categories-edit-title">Mon suivi personnalisé</h1>
 
 <%# itérer sur toutes les catégories
