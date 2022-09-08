@@ -1,10 +1,11 @@
-<div id = "<%= dom_id(category) %>" >
+<div id = "<%= dom_id(category) %>" data-sortable-update-url="<%= user_category_path(current_user.user_categories.find_by(category: category)) if current_user.user_categories.find_by(category: category)%>" >
   <% if current_user.categories.include? category %>
     <div data-action="click->user-categories#remove"
           data-url="<%= user_category_url(current_user.user_categories.find_by(category: category)) %>"
           data-user-categories-target="category"
-          class="mood-category chosen-category">
-      <%= category.title.capitalize %>
+          class="mood-category chosen-category"
+          >
+      <%= category.title.capitalize %> <%#= current_user.user_categories.find_by(category: category).position %>
     </div>
   <% else %>
     <div data-action="click->user-categories#add"

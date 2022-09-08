@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def edit
     @categories = Category.all.where.not(title: "humeur generale")
-    @chosen_categories = @categories.where(id: current_user.category_ids)
+    @chosen_categories = @categories.where(id: current_user.category_ids).includes(:user_categories).order("user_categories.position")
     @other_categories = @categories.where.not(id: current_user.category_ids)
   end
 end
