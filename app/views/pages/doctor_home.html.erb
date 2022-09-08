@@ -1,0 +1,15 @@
+<div class="d-flex flex-column min-hv-90">
+  <div class="header-homepage">
+    <div class="logo-home">
+      <%= image_tag('logo.png', alt: "logo Daily Mood", class: "logo-daily-mood") %>
+    </div>
+    <div class="p-3 text-center">
+      <p>Apprends à valoriser tes pensées positives</p>
+    </div>
+  </div>
+
+  <div class="my-5 d-flex flex-column justify-content-center align-items-center">
+    <h1>Bonjour <%= current_user.username %> !</h1>
+    <%= link_to "PATIENTS", patients_path, class: "home-button doctor-home-btn" %>
+  </div>
+</div>

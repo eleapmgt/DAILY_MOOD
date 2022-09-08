@@ -9,5 +9,7 @@ class PatientsController < ApplicationController
 
   def show
     @patient = current_user.patients.find(params[:id])
+    @principal_category = Category.principal
+    @secondary_categories = Category.secondary
   end
 end
