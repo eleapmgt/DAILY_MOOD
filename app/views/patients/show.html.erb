@@ -1,7 +1,10 @@
 <div class="container charts">
   <div class="entire form">
     <div class="d-flex align-items-center justify-content-between">
-      <h1><%= @patient.username %></h1>
+      <div class="d-flex">
+        <%= link_to "", patients_path, class: "fa-solid fa-chevron-left back-button" %>
+        <h1><%= @patient.username %></h1>
+      </div>
       <%= mail_to @patient.email, "", class: "fa-solid fa-paper-plane mail-button" %>
     </div>
     <% charts_colors = ["#EEE1FF", "#BFEEE4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82","#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82", "#8AC6A9", "#EEE1FF", "#E5F8F4", "#FFEB82" ]%>
