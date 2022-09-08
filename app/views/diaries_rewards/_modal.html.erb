@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Your Reward !!!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Récompense du jour</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex justify-content-center" >
@@ -17,7 +17,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= JSON.parse(diary_reward&.reward&.content_url)["title"] %></h5>
               <p class="card-text"><%= JSON.parse(diary_reward&.reward&.content_url)["description"] %></p>
-              <a href="<%= JSON.parse(diary_reward&.reward&.content_url)["url"] %>" class="btn btn-primary">Go somewhere</a>
+              <a href="<%= JSON.parse(diary_reward&.reward&.content_url)["url"] %>" class="btn btn-primary">Voir plus</a>
             </div>
           </div>
         <% end %>

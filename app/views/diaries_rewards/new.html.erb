@@ -1,6 +1,7 @@
 
 
-  <h1 class='text-center'>Tourne la roue de la positivité</h1>
+  <h1 class='text-center reward-title'>La roue de la positivité</h1>
+  <p class='text-center'> Clique sur la roue pour la faire tourner</p>
   <br>
 
   <div class="container-center">
@@ -11,7 +12,7 @@
         <canvas id="canvas" width="250" height="250" data-wheel-target="canvas"></canvas>
       </div>
       <div class= "end-btn-container">
-        <%= link_to "Terminé", "/", class: "end-button" %>
+        <%= link_to "Page d'accueil", "/", class: "end-button" %>
       </div>
       <div data-wheel-target="reward">
         <%= render 'modal', diary_reward: @diary_reward %>
