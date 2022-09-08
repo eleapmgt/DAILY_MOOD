@@ -138,6 +138,10 @@ end_date = Date.today - 1.day
 index = 0
 content_index = 0
 grat_index = 0
+elea_index = 0
+sherazade_index = 0
+oceane_index = 0
+alexis_index = 0
 all_rewards = Reward.all
 (start_date..end_date).each do |day|
   # pour chaque jours je créer un daily a la date
@@ -149,15 +153,15 @@ all_rewards = Reward.all
   index += 1
 
   users.each do |user|
-    diary_user = Diary.create!(gratitude: gratitude_text[grat_index], user: user, date: day)
+    diary_user = Diary.create!(gratitude: gratitude_text.sample, user: user, date: day)
     user.categories.each do |cat|
       if cat == principal_category
-        content = content_text[content_index]
+        content = content_text.sample
+        content_index += 1
       else
         content = nil
       end
       Mood.create!(diary: diary_user, principal: cat == principal_category, rating: rand(-5..5), category: cat, content: content)
-      content_index += 1
     end
     DiaryReward.create!(diary: diary_user, reward: all_rewards.sample)
     grat_index += 1
@@ -165,7 +169,8 @@ all_rewards = Reward.all
 
   elea.categories.each do |cat|
     if cat == principal_category
-      content = content_text[content_index]
+      content = content_text[elea_index]
+      elea_index += 1
     else
       content = nil
     end
@@ -175,7 +180,8 @@ all_rewards = Reward.all
 
   sherazade.categories.each do |cat|
     if cat == principal_category
-      content = content_text[content_index]
+      content = content_text[sherazade_index]
+      sherazade_index += 1
     else
       content = nil
     end
@@ -185,7 +191,8 @@ all_rewards = Reward.all
 
   oceane.categories.each do |cat|
     if cat == principal_category
-      content = content_text[content_index]
+      content = content_text[oceane_index]
+      oceane_index += 1
     else
       content = nil
     end
@@ -195,7 +202,8 @@ all_rewards = Reward.all
 
   alexis.categories.each do |cat|
     if cat == principal_category
-      content = content_text[content_index]
+      content = content_text[alexis_index]
+      alexis_index += 1
     else
       content = nil
     end
