@@ -3,6 +3,7 @@
 # https://dashboard.opengraph.io/apis/Opengraphio
 
 Reward.destroy_all
+User.where(is_doctor: false).destroy_all
 User.destroy_all
 Category.destroy_all
 
