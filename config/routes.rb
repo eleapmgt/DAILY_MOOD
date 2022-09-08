@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   get 'calendar', to: 'diaries#calendar'
+  get 'doctor_home', to: 'pages#doctor_home'
 
   resources :diaries, only: [:edit, :update, :index] do
     resources :moods, only: [:index, :update, :create, :destroy]
@@ -13,6 +14,6 @@ Rails.application.routes.draw do
     resources :diaries_rewards, only: %i[new create]
   end
   resources :users, only: [:show, :edit]
-  resources :user_categories, only: [:create, :destroy]
+  resources :user_categories, only: [:create, :update, :destroy]
   resources :patients, only: [:index, :show]
 end

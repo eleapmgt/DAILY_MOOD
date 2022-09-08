@@ -5,11 +5,19 @@ le toggle sera sur true ou false en fonction de si c'est une catégorie du user%
 <div class="categories-container" data-controller="user-categories">
   <div class="categories chosen-categories" data-user-categories-target="chosen">
     <h3>Votre sélection</h3>
+
+    <div data-controller="sortable" data-sortable-animation-value="150" data-sortable-resource-name-value="user_category">
+          <div data-url="<%= user_category_url(current_user.user_categories.find_by(category: Category.principal)) %>"
+          class="d-none"
+          >
+      <%= Category.principal.title %>
+    </div>
       <%= render "categories", categories: @chosen_categories %>
+    </div>
   </div>
 
   <div class="categories other-categories" data-user-categories-target="other">
     <h3>Catégories disponibles</h3>
-      <%= render "categories", categories: @other_categories %>
+    <%= render "categories", categories: @other_categories %>
   </div>
 </div>

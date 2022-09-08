@@ -15,9 +15,9 @@ class User < ApplicationRecord
   def create_diary
     d = Diary.create!(user: self, date: Date.today)
     if self.diaries.size <= 1
-      categories = [Category.principal] + Category.secondary.sample(3)
-      categories.each_with_index do |cat, index|
-        UserCategory.create!(user: self, category: cat, position: index + 1)
+      UserCategory.create!(user: self, category: Category.principal)
+      Category.secondary.sample(3).each do |cat|
+        UserCategory.create!(user: self, category: cat)
       end
     end
     self.categories.each do |cat|

@@ -3,7 +3,10 @@ class PagesController < ApplicationController
 
   def home
     if current_user && current_user.is_doctor
-      redirect_to patients_path
+      redirect_to doctor_home_path
     end
+  end
+
+  def doctor_home
   end
 end
