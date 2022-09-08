@@ -17,7 +17,11 @@
       <% if current_diary.gratitude.blank? %>
         <%= link_to "DAILY", edit_diary_path(current_diary), class: "home-button" %>
       <% else %>
-        <%= link_to "DAILY", "#", class: "home-button disable" %>
+        <%# <%= link_to "FAIT", "#", class: "" %>
+        <%=link_to  "#", class:"home-button disable" do%>
+          FAIT
+        <%= image_tag "check.svg", alt: "button", size: "20x20" %>
+        <%end%>
       <% end %>
     <% else %>
       <%= link_to "DAILY", new_user_session_path, class: "home-button" %>
@@ -25,7 +29,6 @@
   </div>
 </div>
 <% unless current_diary&.gratitude&.blank? %>
-  <p>Tu as déjà fait ton daily aujourd'hui, reviens demain.</p>
 <% end %>
 <% if user_signed_in? %>
   <%= render "/shared/last_gratitudes" %>
