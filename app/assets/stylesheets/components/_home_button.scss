@@ -9,12 +9,23 @@
 	transform: scale(1);
 	animation: pulse 4s infinite;
 
-    &:hover {
-      color:black;
-      background-color: #a1dabe;
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
+  &:hover {
+    color:black;
+    background-color: #a1dabe;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  &.disable{
+    background-color: #8AC6A9;
+    opacity: 0.3;
+    color: black;
+    animation: none;
+  }
+  &.disable:hover {
+    -webkit-transform: none;
+    transform: none;
+  }
 
   @keyframes pulse {
     0% {
