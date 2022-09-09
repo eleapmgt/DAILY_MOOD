@@ -1,6 +1,6 @@
 <div class="moods-entire-page">
   <div class="entire-form">
-    <h1 class="text-center mood-title">Evalue ton humeur de la journée</h1>
+    <h1 class="text-center mood-title">Évalue ton humeur de la journée</h1>
     <div class="range-slider" data-controller="range-slider" data-range-slider-mood-value="<%= diary_moods_path(@diary) %>">
       <label for="customRange"></label>
       <input type="range"
@@ -42,7 +42,7 @@
       <%= simple_form_for @diary.mood_principal, method: :patch, url:  diary_content_path(@diary, @diary.mood_principal) do |f| %>
         <%= f.input :content,
                     as: :text,
-                    label: "Ecris un commentaire en rapport avec ton humeur:",
+                    label: "Écris un commentaire en rapport avec ton humeur :",
                     placeholder: "Aujourd'hui, je me sens...",
                     input_html: {class: "gratitude-control mood-text-input"}
         %>
